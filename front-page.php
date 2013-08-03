@@ -16,8 +16,9 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
+        
         <?php
+
         // Outputting the slideshow
           $slideArg = array(
             'post_type' => 'slideshow'
@@ -72,7 +73,12 @@ get_header(); ?>
           </div>  
         <?php
         // end of announcement loop
-          }
+      }
+          
+          $homepage = new WP_Query('name= about us');
+            $homepage->the_post();
+            the_content();
+            
           
           // Outputting the Testimonials
           $testArg = array(

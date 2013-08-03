@@ -78,7 +78,10 @@ get_header(); ?>
           $homepage = new WP_Query('name= about us');
             $homepage->the_post();
             the_content();
+            ?>
             
+            <div class="test"></div>
+            <?php            
           
           // Outputting the Testimonials
           $testArg = array(

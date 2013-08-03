@@ -11,6 +11,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
+      <?php echo ' Hello'; ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 

@@ -74,11 +74,74 @@ get_header(); ?>
         <?php
         // end of announcement loop
       }
+      
+      //Outputting the About Section
+      ?>
+      
+      <div id="about_section">
+        <div id="about_us">
+            <?php $about_us = get_post(76);?>
+          <h2 class="post_title">          
+            <?php echo $about_us->post_title; ?>
+          </h2>
+          <div class="post_content">
+            <p>
+            <?php  echo $about_us->post_content;?>
+            </p>
+          </div> <!-- End of post_content -->
+              
+        </div><!-- End of about_us-->
+        
+        <div id="informercial">
+          <?php $informercial = get_post(78);?>
+        <h2 class="post_title">          
+          <?php echo $informercial->post_title; ?>
+        </h2>
+        <div class="post_content">
+          <?php  echo $informercial->post_content;?>
+        </div> <!-- End of post_content -->
+        
+        </div> <!-- End of informercial -->
+        
+        <div id="vision">
           
-          $homepage = new WP_Query('name= about us');
-            $homepage->the_post();
-            the_content();
-            ?>
+          <?php $vision = get_post(81);?>
+        <h2 class="post_title">          
+          <?php echo $vision->post_title; ?>
+        </h2>
+        <div class="post_content">
+          <?php  echo $vision->post_content;?>
+        </div> <!-- End of post_content -->
+          
+        </div> <!-- End of vision -->
+        
+        <div id="mission">
+          
+          <?php $mission = get_post(83);?>
+        <h2 class="post_title">          
+          <?php echo $mission->post_title; ?>
+        </h2>
+        <div class="post_content">
+          <?php  echo $mission->post_content;?>
+        </div> <!-- End of post_content -->
+          
+        </div> <!-- End of mission -->
+        
+        <div id="values">
+          
+          <?php $values = get_post(85);?>
+        <h2 class="post_title">          
+          <?php echo $values->post_title; ?>
+        </h2>
+        <div class="post_content">
+          <?php  echo $values->post_content;?>
+        </div> <!-- End of post_content -->
+          
+        </div> <!-- End of values -->
+
+      </div><!-- End of About Section-->
+      
+
             
             <div class="test"></div>
             <?php            

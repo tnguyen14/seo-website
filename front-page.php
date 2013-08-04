@@ -171,7 +171,36 @@ get_header(); ?>
               ?>
             </div>
             
+            
+          <h2 class="title">Our Partners</h2>
             <?php
+            
+            // Outputting the slideshow
+              $partnerArg = array(
+                'post_type' => 'partner'
+              );
+        
+              $partner = new WP_Query($partnerArg);
+            ?>
+        
+            <div id="partners">
+           
+              <?php
+                while($partner->have_posts()){
+                  $partner->the_post();       
+              ?>
+                        
+              <div class="partner_image">
+                <?php 
+                  $meta = get_post_meta(get_the_ID(), 'image');
+                  $image = wp_get_attachment_image($meta[0], array(150,150));
+                  echo $image;
+                ?>
+              </div> <!-- End of partner_image -->
+              
+              
+              <?php
+                } //end of partners while loop
             
           wp_reset_postdata();
         ?>

@@ -138,7 +138,6 @@ function seo_cpt() {
       'context'   => 'normal',
       'fields'    => array(
         'school'      => array('type' => 'text'),
-        'class year'  => array('type' => 'number'),
         'class'       => array('type' => 'text')
       )
     ));
@@ -168,8 +167,8 @@ function seo_cpt() {
       'id'        => 'additional information',
       'context'   => 'normal',
       'fields'    => array(
-        'Description'      => array('type' => 'textarea'),
         'image'       => array('type' => 'media'),
+        'about'       => array('type' => 'textarea'),
         'link'        => array('type'=> 'url')
       )
     ));

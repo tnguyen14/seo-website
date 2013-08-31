@@ -12,7 +12,14 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php the_content();   
+    ?>
+    <div id="meta">
+      <?php
+          the_meta();
+      ?>
+    </div>
+
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'seo-vietnam' ),

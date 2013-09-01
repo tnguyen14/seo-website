@@ -39,7 +39,7 @@ function seo_vietnam_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -60,6 +60,9 @@ function seo_vietnam_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Add image sizes
+	add_image_size( 'home-slide', 1000, 9999, false );
 }
 endif; // seo_vietnam_setup
 add_action( 'after_setup_theme', 'seo_vietnam_setup' );
@@ -89,7 +92,7 @@ function seo_vietnam_scripts() {
 
 	wp_enqueue_script( 'seo-vietnam-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script('box-slider', get_template_directory_uri().'/js/vendor/jquery.bxslider.min.js',array('jquery'),'1.0', true);
+	// wp_enqueue_script('box-slider', get_template_directory_uri().'/js/vendor/jquery.bxslider.min.js',array('jquery'),'1.0', true);
 
 	wp_enqueue_script('seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'box-slider'),'1.0', true);
 
@@ -107,7 +110,9 @@ function seo_cpt() {
 	if ( ! class_exists( 'Super_Custom_Post_Type' ) )
 			return;
 
-	$slideshow = new Super_Custom_Post_Type( 'slideshow');
+	$slideshow = new Super_Custom_Post_Type( 'slideshow', 'Slide', 'Slides', array(
+		'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
+	));
 
 	# Test Icon. Should be a square grid.
 	$slideshow->set_icon( 'sort' );

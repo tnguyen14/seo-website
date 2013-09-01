@@ -88,10 +88,10 @@ function seo_vietnam_scripts() {
 	wp_enqueue_script( 'seo-vietnam-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'seo-vietnam-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-  
-  wp_enqueue_script('box-slider', get_template_directory_uri().'/js/vendor/jquery.bxslider.min.js',array('jquery'),'1.0', true);
 
-  wp_enqueue_script('seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'box-slider'),'1.0', true);
+	wp_enqueue_script('box-slider', get_template_directory_uri().'/js/vendor/jquery.bxslider.min.js',array('jquery'),'1.0', true);
+
+	wp_enqueue_script('seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'box-slider'),'1.0', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -104,120 +104,120 @@ function seo_vietnam_scripts() {
 add_action( 'wp_enqueue_scripts', 'seo_vietnam_scripts' );
 
 function seo_cpt() {
-    if ( ! class_exists( 'Super_Custom_Post_Type' ) )
-        return;
+	if ( ! class_exists( 'Super_Custom_Post_Type' ) )
+			return;
 
-    $slideshow = new Super_Custom_Post_Type( 'slideshow');
+	$slideshow = new Super_Custom_Post_Type( 'slideshow');
 
-    # Test Icon. Should be a square grid.
-    $slideshow->set_icon( 'sort' );
+	# Test Icon. Should be a square grid.
+	$slideshow->set_icon( 'sort' );
 
-    // # Taxonomy test, should be like tags
-    // $tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
-    // 
-    // # Taxonomy test, should be like categories
-    // $tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'Tax Cat', 'Tax Cats', 'category' );
-    // 
-    // # Connect both of the above taxonomies with the post type
-    // connect_types_and_taxes( $demo_posts, array( $tax_tags, $tax_cats ) );
+	// # Taxonomy test, should be like tags
+	// $tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
+	//
+	// # Taxonomy test, should be like categories
+	// $tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'Tax Cat', 'Tax Cats', 'category' );
+	//
+	// # Connect both of the above taxonomies with the post type
+	// connect_types_and_taxes( $demo_posts, array( $tax_tags, $tax_cats ) );
 
-    # Add a meta box with every field type
-    $slideshow->add_meta_box( array(
-        'id'      => 'slideshow',
-        'context' => 'normal',
-        'fields'  => array(
-          'image' => array('type' => 'media')
-        )
-    ) );
-          
-    $testimonial = new Super_Custom_Post_Type('testimonial');
-    
-    $testimonial->set_icon('thumbs-up');
-    $testimonial->add_meta_box(array(
-      'id'        => 'additional information',
-      'context'   => 'normal',
-      'fields'    => array(
-        'school'      => array('type' => 'text'),
-        'class'       => array('type' => 'text')
-      )
-    ));
+	# Add a meta box with every field type
+	// $slideshow->add_meta_box( array(
+	//     'id'      => 'slideshow',
+	//     'context' => 'normal',
+	//     'fields'  => array(
+	//       'image' => array('type' => 'media')
+	//     )
+	// ) );
 
-    $people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
-      'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes'),
-      'taxonomies' => array('category')
-    ));
+	$testimonial = new Super_Custom_Post_Type('testimonial');
 
-    $people->set_icon('user');
-    $people->add_meta_box(array(
-      'id'        => 'additional information',
-      'context'   => 'normal',
-      'fields'    => array(
-        'position'      => array('type' => 'text'),
-        'other titles'  => array('type' => 'textarea'),
-        'image'       => array('type' => 'media')
-      )
-    ));
-        
-    $partner = new Super_Custom_Post_Type('partner','Partner', 'Partners', array(
-      'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes')
-    ));
+	$testimonial->set_icon('thumbs-up');
+	// $testimonial->add_meta_box(array(
+	//   'id'        => 'additional information',
+	//   'context'   => 'normal',
+	//   'fields'    => array(
+	//     'school'      => array('type' => 'text'),
+	//     'class'       => array('type' => 'text')
+	//   )
+	// ));
 
-    $partner->set_icon('group');
-    $partner->add_meta_box(array(
-      'id'        => 'additional information',
-      'context'   => 'normal',
-      'fields'    => array(
-        'image'       => array('type' => 'media'),
-        'about'       => array('type' => 'textarea'),
-        'link'        => array('type'=> 'url')
-      )
-    ));
-        
-    $program = new Super_Custom_Post_Type('program','Program', 'Programs', array(
-      'supports' => array('title','editor', 'thumbnail', 'revisions', 'page-attributes')
-    ));
+	$people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
+		'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes'),
+		'taxonomies' => array('category')
+	));
 
-    $program->set_icon('windows');
-    $program->add_meta_box(array(
-      'id'        => 'additional information',
-      'context'   => 'normal',
-      'fields'    => array(
-        'image'                => array('type' => 'media'),
-        'internship placement' => array('type' => 'textarea'),
-        'training'             => array('type'=> 'textarea'),
-        'mentoring'            => array('type'=> 'textarea'),
-        'community service'    => array('type'=> 'textarea')
-      )
-    ));
-    $program -> add_meta_box(array(
-      'id'        => 'key facts',
-      'context'   => 'side',
-      'fields'    => array(
-        'alumni'            => array('type' => 'text'),
-        'employer partners' => array('type' => 'text'),
-        'guest speakers'    => array('type' => 'text'),
-        'community service' => array('type' => 'textarea')
-      )
-      ));
-     
-        $project = new Super_Custom_Post_Type('project', 'Project', 'Projects', array(
-          'supports' => array('title','editor', 'thumbnail', 'revisions', 'page-attributes'),
-          'taxonomies' => array('category')
-        ));
+	$people->set_icon('user');
+	// $people->add_meta_box(array(
+	//   'id'        => 'additional information',
+	//   'context'   => 'normal',
+	//   'fields'    => array(
+	//     'position'      => array('type' => 'text'),
+	//     'other titles'  => array('type' => 'textarea'),
+	//     'image'       => array('type' => 'media')
+	//   )
+	// ));
 
-        $project->set_icon('cogs');
-        $project->add_meta_box(array(
-          'id'        => 'additional information',
-          'context'   => 'normal',
-          'fields'    => array(
-            'image'                => array('type' => 'media'),
-            'completion'           => array('type' => 'number'),
-            'funded'               => array('type'=> 'number'),
-            'donate'               => array('type'=> 'wysiwyg'),
-            'contact'              => array('type'=> 'wysiwyg')
-          )
-        ));
-    
+	$partner = new Super_Custom_Post_Type('partner','Partner', 'Partners', array(
+		'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes')
+	));
+
+	$partner->set_icon('group');
+	// $partner->add_meta_box(array(
+	//   'id'        => 'additional information',
+	//   'context'   => 'normal',
+	//   'fields'    => array(
+	//     'image'       => array('type' => 'media'),
+	//     'about'       => array('type' => 'textarea'),
+	//     'link'        => array('type'=> 'url')
+	//   )
+	// ));
+
+	$program = new Super_Custom_Post_Type('program','Program', 'Programs', array(
+		'supports' => array('title','editor', 'thumbnail', 'revisions', 'page-attributes')
+	));
+
+	$program->set_icon('windows');
+	// $program->add_meta_box(array(
+	//   'id'        => 'additional information',
+	//   'context'   => 'normal',
+	//   'fields'    => array(
+	//     'image'                => array('type' => 'media'),
+	//     'internship placement' => array('type' => 'textarea'),
+	//     'training'             => array('type'=> 'textarea'),
+	//     'mentoring'            => array('type'=> 'textarea'),
+	//     'community service'    => array('type'=> 'textarea')
+	//   )
+	// ));
+	// $program -> add_meta_box(array(
+	//   'id'        => 'key facts',
+	//   'context'   => 'side',
+	//   'fields'    => array(
+	//     'alumni'            => array('type' => 'text'),
+	//     'employer partners' => array('type' => 'text'),
+	//     'guest speakers'    => array('type' => 'text'),
+	//     'community service' => array('type' => 'textarea')
+	//   )
+	//   ));
+
+	$project = new Super_Custom_Post_Type('project', 'Project', 'Projects', array(
+		'supports' => array('title','editor', 'thumbnail', 'revisions', 'page-attributes'),
+		'taxonomies' => array('category')
+	));
+
+	$project->set_icon('cogs');
+	// $project->add_meta_box(array(
+	//   'id'        => 'additional information',
+	//   'context'   => 'normal',
+	//   'fields'    => array(
+	//     'image'                => array('type' => 'media'),
+	//     'completion'           => array('type' => 'number'),
+	//     'funded'               => array('type'=> 'number'),
+	//     'donate'               => array('type'=> 'wysiwyg'),
+	//     'contact'              => array('type'=> 'wysiwyg')
+	//   )
+	// ));
+
 }
 add_action( 'after_setup_theme', 'seo_cpt' );
 

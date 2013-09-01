@@ -1,0 +1,14 @@
+{
+  "name": "seo-vietnam",
+  "version": "0.0.2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bxslider-4": "*"
+  }
+}

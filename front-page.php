@@ -16,194 +16,159 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-        
-        <?php
 
-        // Outputting the slideshow
-          $slideArg = array(
-            'post_type' => 'slideshow'
-          );
-        
-          $slideshow = new WP_Query($slideArg);
-        ?>
-        
-        <div id="homepage_slider">
-          <ul class="bxslider">
-          <?php
-            while($slideshow->have_posts()){
-              $slideshow->the_post();
-          
-          ?>
-          <li>
-          <h2 class="post_title"><?php the_title();?></h2>
-          
-          <?php 
-            $meta = get_post_meta(get_the_ID(), 'image');
-            $image = wp_get_attachment_image($meta[0], array(1500,400));
-            echo $image;
-          ?>
-          </li>
-        
-          <?php
-            } //end of slideshow while loop
-            ?>
-          </ul>
-        </div>
-        <?php
-        
-        // Outputting the announcements
-          
-        $announArg= array(
-          'category_name' => 'announcement'
-          
-        );
-        
-          $announcement = new WP_Query($announArg);
-          while($announcement->have_posts()){
-            $announcement->the_post();
-        ?>
-        
-          <div id="announcement">
-            <h2 class="post_title"><?php the_title();?></h2>
-            <div class="content">
-              <?php
-              echo get_post_field('post_content', get_the_ID());
-              ?>
-            </div>
-          </div>  
-        <?php
-        // end of announcement loop
-      }
-      
-      //Outputting the About Section
-      ?>
-      
-      <div id="about_section">
-        <div id="about_us">
-            <?php $about_us = get_post(76);?>
-          <h2 class="post_title">          
-            <?php echo $about_us->post_title; ?>
-          </h2>
-          <div class="post_content">
-            <p>
-            <?php  echo $about_us->post_content;?>
-            </p>
-          </div> <!-- End of post_content -->
-              
-        </div><!-- End of about_us-->
-        
-        <div id="informercial">
-          <?php $informercial = get_post(78);?>
-        <h2 class="post_title">          
-          <?php echo $informercial->post_title; ?>
-        </h2>
-        <div class="post_content">
-          <?php  echo $informercial->post_content;?>
-        </div> <!-- End of post_content -->
-        
-        </div> <!-- End of informercial -->
-        
-        <div id="vision">
-          
-          <?php $vision = get_post(81);?>
-        <h2 class="post_title">          
-          <?php echo $vision->post_title; ?>
-        </h2>
-        <div class="post_content">
-          <?php  echo $vision->post_content;?>
-        </div> <!-- End of post_content -->
-          
-        </div> <!-- End of vision -->
-        
-        <div id="mission">
-          
-          <?php $mission = get_post(83);?>
-        <h2 class="post_title">          
-          <?php echo $mission->post_title; ?>
-        </h2>
-        <div class="post_content">
-          <?php  echo $mission->post_content;?>
-        </div> <!-- End of post_content -->
-          
-        </div> <!-- End of mission -->
-        
-        <div id="values">
-          
-          <?php $values = get_post(85);?>
-        <h2 class="post_title">          
-          <?php echo $values->post_title; ?>
-        </h2>
-        <div class="post_content">
-          <?php  echo $values->post_content;?>
-        </div> <!-- End of post_content -->
-          
-        </div> <!-- End of values -->
+				<?php
 
-      </div><!-- End of About Section-->
-      
+				// Outputting the slideshow
+				$slideArg = array(
+					'post_type' => 'slideshow',
+					'orderby'	=> 'menu_order',
+					'order'		=> 'ASC'
+				);
 
-            
-            <div class="test"></div>
-            <?php            
-          
-          // Outputting the Testimonials
-          $testArg = array(
-            'post_type' => 'testimonial',
-            'orderby'   => 'rand'
-          );
-          
-          $testimonial = new WP_Query($testArg);
-            $testimonial->the_post();
-            
-            ?>
-            <h2 class="post_title"><?php the_title();?></h2>
-            <div class="content">
-              <?php
-              echo get_post_field('post_content', get_the_ID());
-              ?>
-            </div>
-            <div class="school">
-              <?php echo get_post_meta(get_the_ID(),'school')[0]; ?>
-            </div>
-            <div class="class_year"></div>
-            <?php
-              echo get_post_meta(get_the_ID(),'class')[0];
-              ?>
-            </div>
-            
-            
-          <h2 class="title">Our Partners</h2>
-            <?php
-            
-            // Outputting the slideshow
-              $partnerArg = array(
-                'post_type' => 'partner'
-              );
-        
-              $partner = new WP_Query($partnerArg);
-            ?>
-        
-            <div id="partners">
-           
-              <?php
-                while($partner->have_posts()){
-                  $partner->the_post();       
-              ?>
-                        
-              <div class="partner_image">
-                <?php 
-                  $meta = get_post_meta(get_the_ID(), 'image');
-                  $image = wp_get_attachment_image($meta[0], array(150,150));
-                  echo $image;
-                ?>
-              </div> <!-- End of partner_image -->
-              
-              
-              <?php
-                } //end of partners while loop
-            
-          wp_reset_postdata();
-        ?>
+				$slideshow = new WP_Query($slideArg);
+				?>
+
+				<div id="homepage_slider">
+					<div class="bxslider">
+					<?php
+						while($slideshow->have_posts()) :
+							$slideshow->the_post();
+
+					?>
+					<div class="homepage-slide">
+					<h2 class="slide_text"><?php the_content();?></h2>
+
+					<?php
+						if (has_post_thumbnail()) :
+							the_post_thumbnail('home-slide');
+						endif;
+					?>
+					</div><!-- .homepage-slide -->
+
+
+					<?php
+						endwhile; //end of slideshow while loop
+					?>
+					</div><!-- .bxslider -->
+				</div>
+				<?php
+				wp_reset_postdata();
+				?>
+				<div class="container section">
+				<?php
+					the_content();
+				?>
+				</div>
+
+				<div class="container">
+					<div id="about_us" class="section">
+						<?php $about_us = get_page_by_title( 'About Us' );?>
+						<h3 class="section-title">
+							<?php echo $about_us->post_title; ?>
+						</h3>
+						<div class="section-content">
+							<?php  echo $about_us->post_content;?>
+						</div>
+					</div><!-- #about_us-->
+
+					<div id="informercial" class="section">
+						<h3 class="section-title">Informercial</h3>
+						<div class="section-content">
+							<?php  ?>
+						</div>
+					</div><!-- #informercial-->
+
+					<div id="vision" class="section">
+						<?php $vision = get_page_by_title( 'Vision' );?>
+						<h3 class="section-title">
+							<?php echo $vision->post_title; ?>
+						</h3>
+						<div class="section-content">
+							<?php  echo $vision->post_content;?>
+						</div>
+					</div><!-- #vision-->
+
+					<div id="mission" class="section">
+						<?php $mission = get_page_by_title( 'Mission' );?>
+						<h3 class="section-title">
+							<?php echo $mission->post_title; ?>
+						</h3>
+						<div class="section-content">
+							<?php  echo $mission->post_content;?>
+						</div>
+					</div><!-- #mission-->
+
+					<div id="values" class="section">
+						<?php $values = get_page_by_title( 'Values' );?>
+						<h3 class="section-title">
+							<?php echo $values->post_title; ?>
+						</h3>
+						<div class="section-content">
+							<?php  echo $values->post_content;?>
+						</div>
+					</div><!-- #values-->
+
+				</div><!-- .container-->
+
+
+				<?php
+				// Outputting the Testimonials
+				$testArg = array(
+					'post_type' => 'testimonial',
+					'orderby'   => 'rand'
+				);
+
+				$testimonial = new WP_Query($testArg);
+				while ($testimonial->have_posts()) :
+					$testimonial->the_post();
+
+					?>
+					<div class="testimonial-content">
+						<?php the_content(); ?>
+					</div>
+					<div class="testimonial-meta">
+						<span class="name"><?php the_title(); ?></span>
+						<span class="school"><?php echo get_post_meta(get_the_ID(),'school', true); ?></span>
+						<span class="class-year"><?php echo get_post_meta(get_the_ID(),'class', true); ?></span>
+					</div><!-- .testimonial-meta -->
+				<?php
+				endwhile;
+				wp_reset_postdata();
+				?>
+
+				<h2 class="title">Our Partners</h2>
+					<?php
+
+					// Outputting the slideshow
+						$partnerArg = array(
+							'post_type' => 'partner'
+						);
+
+						$partner = new WP_Query($partnerArg);
+					?>
+
+					<div id="partners">
+
+						<?php
+							while($partner->have_posts()){
+								$partner->the_post();
+						?>
+
+						<div class="partner_image">
+							<?php
+								$meta = get_post_meta(get_the_ID(), 'image');
+								$image = wp_get_attachment_image($meta[0], array(150,150));
+								echo $image;
+							?>
+						</div> <!-- End of partner_image -->
+
+
+						<?php
+							} //end of partners while loop
+
+					wp_reset_postdata();
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 

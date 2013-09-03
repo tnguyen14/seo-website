@@ -86,15 +86,16 @@ add_action( 'widgets_init', 'seo_vietnam_widgets_init' );
  * Enqueue scripts and styles
  */
 function seo_vietnam_scripts() {
+	wp_enqueue_style( 'bxslider-style', get_stylesheet_directory_uri().'/bower_components/bxslider-4/jquery.bxslider.css');
 	wp_enqueue_style( 'seo-vietnam-style', get_stylesheet_directory_uri().'/css/main.css');
 
 	wp_enqueue_script( 'seo-vietnam-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'seo-vietnam-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	// wp_enqueue_script('box-slider', get_template_directory_uri().'/js/vendor/jquery.bxslider.min.js',array('jquery'),'1.0', true);
+	wp_enqueue_script( 'bxslider', get_template_directory_uri().'/bower_components/bxslider-4/jquery.bxslider.min.js', array('jquery'),'4.1.1', true);
 
-	wp_enqueue_script('seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'box-slider'),'1.0', true);
+	wp_enqueue_script( 'seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'bxslider'),'0.1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

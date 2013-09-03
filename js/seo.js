@@ -1,3 +1,4 @@
 jQuery(document).ready(function($){
-  // $('.bxslider').bxSlider();
+	console.log('bxslider?');
+	$('.bxslider').bxSlider();
 });

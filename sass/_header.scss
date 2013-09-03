@@ -1,7 +1,33 @@
+.site-header {
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-top: 0.5em;
+	position: relative;
+	z-index: 9999;
+}
+
+.site-branding {
+	float: left;
+}
+
+.main-navigation{
+	clear: none;
+	float: left;
+	width: auto;
+	a {
+		height: 5em;
+		padding: 1em;
+	}
+}
+
 .site-title {
 	a {
 		display: block;
 		width: 90px;
 		height: 70px;
 	}
+}
+
+// a bit of layout
+.content-area {
+	margin-top: -5.5em;
 }

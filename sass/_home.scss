@@ -6,3 +6,35 @@ h2 {
 	font-size: 24px;
 	font-weight: bold;
 }
+
+.homepage-slide {
+	max-height: 34.375em;
+	overflow: hidden;
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.slide-text {
+		color: white;
+		padding: 1em;
+		background-color: rgba(0,0,0,0.7);
+		position: absolute;
+		right: 2em;
+		bottom: 3em;
+	}
+}
+
+.bx-wrapper {
+	.bx-viewport {
+		border: none;
+	}
+}
+
+.section {
+	@extend %section;
+}
+
+li {
+	list-style: url('../images/list_check.png');
+}

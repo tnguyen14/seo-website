@@ -29,28 +29,24 @@ get_header(); ?>
 				$slideshow = new WP_Query($slideArg);
 				?>
 
-				<div id="homepage_slider">
-					<div class="bxslider">
-					<?php
-						while($slideshow->have_posts()) :
-							$slideshow->the_post();
+				<div class="homepage-slider bxslider container">
 
-					?>
-					<div class="homepage-slide">
-					<h2 class="slide_text"><?php the_content();?></h2>
+				<?php
+					while($slideshow->have_posts()) :
+						$slideshow->the_post();
+				?>
+						<div class="homepage-slide">
+							<h2 class="slide-text"><?php echo get_the_content();?></h2>
 
-					<?php
-						if (has_post_thumbnail()) :
-							the_post_thumbnail('home-slide');
-						endif;
-					?>
-					</div><!-- .homepage-slide -->
-
-
-					<?php
-						endwhile; //end of slideshow while loop
-					?>
-					</div><!-- .bxslider -->
+							<?php
+								if (has_post_thumbnail()) :
+									the_post_thumbnail('home-slide');
+								endif;
+							?>
+						</div><!-- .homepage-slide -->
+				<?php
+					endwhile; //end of slideshow while loop
+				?>
 				</div>
 				<?php
 				wp_reset_postdata();

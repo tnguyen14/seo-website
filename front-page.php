@@ -61,52 +61,54 @@ get_header(); ?>
 				</div>
 
 				<div class="container">
-					<div id="about_us" class="section">
-						<?php $about_us = get_page_by_title( 'About Us' );?>
-						<h3 class="section-title">
-							<?php echo $about_us->post_title; ?>
-						</h3>
-						<div class="section-content">
-							<?php  echo $about_us->post_content;?>
-						</div>
-					</div><!-- #about_us-->
+					<div class="inner-container">
+						<div id="about_us" class="section">
+							<?php $about_us = get_page_by_title( 'About Us' );?>
+							<h3 class="section-title">
+								<?php echo $about_us->post_title; ?>
+							</h3>
+							<div class="section-content">
+								<?php  echo $about_us->post_content;?>
+							</div>
+						</div><!-- #about_us-->
 
-					<div id="informercial" class="section">
-						<h3 class="section-title">Informercial</h3>
-						<div class="section-content">
-							<?php  ?>
-						</div>
-					</div><!-- #informercial-->
+						<div id="informercial" class="section">
+							<h3 class="section-title">Informercial</h3>
+							<iframe class="youtube-embed" type="text/html" width="560" height="315"  src="//www.youtube.com/embed/BT4XtwV0ndw" frameborder="0"></iframe>
+						</div><!-- #informercial-->
+					</div>
+					<div class="inner-container">
+						<div id="vision" class="section">
+							<?php $vision = get_page_by_title( 'Vision' );?>
+							<h3 class="section-title">
+								<?php echo $vision->post_title; ?>
+							</h3>
+							<div class="section-content">
+								<?php  echo $vision->post_content;?>
+							</div>
+						</div><!-- #vision-->
 
-					<div id="vision" class="section">
-						<?php $vision = get_page_by_title( 'Vision' );?>
-						<h3 class="section-title">
-							<?php echo $vision->post_title; ?>
-						</h3>
-						<div class="section-content">
-							<?php  echo $vision->post_content;?>
-						</div>
-					</div><!-- #vision-->
+						<div id="mission" class="section">
+							<?php $mission = get_page_by_title( 'Mission' );?>
+							<h3 class="section-title">
+								<?php echo $mission->post_title; ?>
+							</h3>
+							<div class="section-content">
+								<?php  echo $mission->post_content;?>
+							</div>
+						</div><!-- #mission-->
 
-					<div id="mission" class="section">
-						<?php $mission = get_page_by_title( 'Mission' );?>
-						<h3 class="section-title">
-							<?php echo $mission->post_title; ?>
-						</h3>
-						<div class="section-content">
-							<?php  echo $mission->post_content;?>
-						</div>
-					</div><!-- #mission-->
-
-					<div id="values" class="section">
-						<?php $values = get_page_by_title( 'Values' );?>
-						<h3 class="section-title">
-							<?php echo $values->post_title; ?>
-						</h3>
-						<div class="section-content">
-							<?php  echo $values->post_content;?>
-						</div>
-					</div><!-- #values-->
+						<div id="values" class="section">
+							<?php $values = get_page_by_title( 'Values' );?>
+							<h3 class="section-title">
+								<?php echo $values->post_title; ?>
+							</h3>
+							<div class="section-content">
+								<?php  echo $values->post_content;?>
+							</div>
+							<?php wp_reset_postdata(); ?>
+						</div><!-- #values-->
+					</div>
 
 				</div><!-- .container-->
 

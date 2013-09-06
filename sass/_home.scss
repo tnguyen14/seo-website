@@ -1,7 +1,3 @@
-/*********       Custom Theme           ************/
-
-/* Global Styles */
-
 h2 {
 	font-size: 24px;
 	font-weight: bold;
@@ -31,13 +27,34 @@ h2 {
 	}
 }
 
+.container {
+	@extend %clearfix;
+	background: #fff;
+	margin: 1em auto 2em;
+	padding: 1.5em 2em;
+	position: relative;
+	width: 90%;
+	@include box-shadow(0 1px 1px rgba(0,0,0,0.35));
+	&:after {
+		border-top: 1px solid #e0dfdf;
+		border-bottom: 1px solid #fcfcfc;
+		bottom: -1em;
+		left: 0;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+	}
+}
+
 .section {
 	@extend %section;
+	margin-bottom: 1em;
 }
 
 .list-container {
 	@extend %clearfix;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 .column-3 {
 	padding: 0 1em;
@@ -58,5 +75,46 @@ li {
 	@include box-shadow(0 1px 1px rgba(223,85,38,0.35));
 	a {
 		color: $gold;
+	}
+}
+
+.inner-container {
+	@extend %clearfix;
+}
+
+@media (min-width: 48em) {
+	#vision {
+		float: left;
+		width: 48%;
+	}
+	#mission {
+		float: left;
+		margin-left: 4%;
+		width: 48%;
+	}
+}
+@media (min-width: 70em) {
+	#about_us {
+		float: left;
+		width: 50%;
+	}
+	#informercial {
+		float: left;
+		margin-left: 3%;
+		width: 47%;
+	}
+	#vision {
+		float: left;
+		width: 26.333%;
+	}
+	#mission {
+		float: left;
+		margin-left: 3%;
+		width: 26.333%;
+	}
+	#values {
+		float: left;
+		margin-left: 3%;
+		width: 40.333%;
 	}
 }

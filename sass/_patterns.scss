@@ -83,7 +83,7 @@
  	*zoom: 1;
 	&:before,
 	&:after {
-		content: " "; /* 1 */
+		content: ""; /* 1 */
 		display: table; /* 2 */
 	}
 	&:after {
@@ -97,5 +97,6 @@
 		color: $blue-header;
 		font-size: 1.3em;
 		margin: 0.5em 0;
+		padding-left: 1em;
 	}
 }

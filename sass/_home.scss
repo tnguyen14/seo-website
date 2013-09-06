@@ -24,6 +24,8 @@ h2 {
 .bx-wrapper {
 	.bx-viewport {
 		border: none;
+		left: 0;
+		@include box-shadow(none);
 	}
 }
 
@@ -80,6 +82,42 @@ li {
 
 .inner-container {
 	@extend %clearfix;
+}
+
+.testimonials {
+	.bx-prev {
+		left: -22px;
+	}
+	.bx-next {
+		right: -22px;
+	}
+
+}
+.testimonial {
+	padding: 0 1em;
+}
+.testimonial-content {
+	border: 1px solid #dfdfdf;
+	padding: 1em;
+	position: relative;
+	@include box-shadow(0 1px 1px rgba(0,0,0,0.35));
+	&:after {
+		content: "";
+		background: url("../images/assets.png") 0 -150px;
+		display: block;
+		position: absolute;
+		width: 21px;
+		height: 22px;
+		bottom: -21px;
+		left: 3em;
+	}
+}
+.testimonial-meta {
+	margin-top: 1.2em;
+	@media (min-width: 48em) {
+		margin-left: 4.5em;
+		margin-top: 0.3em;
+	}
 }
 
 @media (min-width: 48em) {

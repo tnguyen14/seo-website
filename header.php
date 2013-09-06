@@ -24,7 +24,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title">
-				<a class="ir" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/seo-logo.png);">
+				<a class="ir" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>

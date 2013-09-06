@@ -112,7 +112,8 @@ get_header(); ?>
 
 				</div><!-- .container-->
 
-
+				<div class="container section testimonials">
+					<h3 class="section-title">Testimonials</h3>
 				<?php
 				// Outputting the Testimonials
 				$testArg = array(
@@ -123,7 +124,7 @@ get_header(); ?>
 				$testimonial = new WP_Query($testArg);
 				if ($testimonial->have_posts()):
 				?>
-					<div class="testimonials container">
+					<div class="testimonials bxslider">
 				<?php
 				endif;
 
@@ -131,14 +132,20 @@ get_header(); ?>
 					$testimonial->the_post();
 
 					?>
-					<div class="testimonial-content">
-						<?php the_content(); ?>
+					<div class="testimonial">
+						<div class="testimonial-content">
+							<?php the_content(); ?>
+						</div>
+						<div class="testimonial-meta">
+							<span class="name"><?php the_title(); ?>,</span>
+							<?php if (get_field('school')): ?>
+								<span class="school"><?php the_field('school'); ?></span>
+								<?php if(get_field('class')): ?>
+								<span class="class-year">(Class of <?php the_field('class'); ?>)</span>
+								<?php endif; ?>
+							<?php endif; ?>
+						</div><!-- .testimonial-meta -->
 					</div>
-					<div class="testimonial-meta">
-						<span class="name"><?php the_title(); ?></span>
-						<span class="school"><?php echo get_post_meta(get_the_ID(),'school', true); ?></span>
-						<span class="class-year"><?php echo get_post_meta(get_the_ID(),'class', true); ?></span>
-					</div><!-- .testimonial-meta -->
 				<?php
 				endwhile;
 				if ($testimonial->have_posts()):
@@ -148,6 +155,7 @@ get_header(); ?>
 				endif;
 				wp_reset_postdata();
 				?>
+				</div><!-- .container -->
 
 				<h2 class="title">Our Partners</h2>
 					<?php

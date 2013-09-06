@@ -21,6 +21,7 @@
 
 .site-title {
 	a {
+		@extend %ir;
 		background: url(../images/assets.png) 0 -80px;
 		display: block;
 		width: 90px;

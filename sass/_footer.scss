@@ -1,0 +1,65 @@
+.site-footer {
+	.wrapper {
+		background-color: #262626;
+		color: #fff;
+		margin: 1.5em 1em;
+	}
+	.inner-wrap {
+		@extend %clearfix;
+		width: 90%;
+		margin: 0 auto;
+		padding: 2em 0;
+	}
+	.rights,
+	.credits {
+		text-align: center;
+	}
+	.site-info {
+		margin-bottom: 1em;
+	}
+}
+.contact-info {
+	float: left;
+	width: 50%;
+	h3 {
+		margin-bottom: 1em;
+	}
+	p {
+		margin-bottom: 0.5em;
+	}
+	a {
+		color: $gold;
+		&:hover {
+			color: darken($gold, 20%);
+		}
+	}
+}
+.social-media {
+	h3 {
+		margin-bottom: 1em;
+	}
+	float: left;
+	width: 50%;
+	a {
+		@extend %ir;
+		background: url('../images/assets.png') -90px -80px;
+		display: block;
+		float: left;
+		margin-right: 0.625em;
+		width: 28px;
+		height: 28px;
+		@include transition(all 0.2s);
+		&:hover {
+			background-position-y: -118px;
+		}
+	}
+	.linkedin {
+		background-position-x: -118px;
+	}
+	.twitter {
+		background-position-x: -146px;
+	}
+	.youtube {
+		background-position-x: -174px;
+	}
+}

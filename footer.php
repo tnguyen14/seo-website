@@ -11,11 +11,25 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="wrapper">
+			<div class="inner-wrap">
+				<div class="contact-info">
+					<h3>SEO Viet Nam</h3>
+					<p>Ho Chi Minh City, Vietnam</p>
+					<p><a href="mailto:info@seo-vietnam.org">info@seo-vietnam.org</a></p>
+				</div><!-- .contact-info -->
+				<div class="social-media">
+					<h3>Follow Us</h3>
+					<a class="facebook" href="http://facebook.com/seovie">Facebook</a>
+					<a class="linkedin" href="http://www.linkedin.com/pub/seo-iiv/28/376/b1">LinkedIn</a>
+					<a class="twitter" href="http://twitter.com/seoiiv">Twitter</a>
+					<a class="youtube" href="http://www.youtube.com/user/seovietnam2012">Youtube</a>
+				</div><!-- .social-media -->
+			</div><!-- .inner-wrap -->
+		</div><!-- .wrapper -->
 		<div class="site-info">
-			<?php do_action( 'seo_vietnam_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'seo-vietnam' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'seo-vietnam' ), 'WordPress' ); ?></a>
-
-			
+			<div class="rights">Copyright <?php echo date("Y");?> by SEO-Vietnam. All rights reserved.</div>
+			<div class="credits">Developed by <a href="http://tridnguyen.com">Tri Nguyen</a>. Powered by <a href="http://wordpress.org/">WordPress.</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

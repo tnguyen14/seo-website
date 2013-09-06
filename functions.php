@@ -149,7 +149,7 @@ function seo_cpt() {
 	// ));
 
 	$people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
-		'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes'),
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'revisions', 'page-attributes'),
 		'taxonomies' => array('category')
 	));
 
@@ -165,7 +165,7 @@ function seo_cpt() {
 	// ));
 
 	$partner = new Super_Custom_Post_Type('partner','Partner', 'Partners', array(
-		'supports' => array('title', 'author', 'thumbnail', 'revisions', 'page-attributes')
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'revisions', 'page-attributes')
 	));
 
 	$partner->set_icon('group');

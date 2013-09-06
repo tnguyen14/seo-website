@@ -89,13 +89,21 @@ li {
 }
 
 .testimonials {
+	.bx-controls-direction a {
+		opacity: 0;
+		@include transition(opacity 0.2s);
+	}
+	.bx-wrapper:hover {
+		.bx-controls-direction a {
+			opacity: 1;
+		}
+	}
 	.bx-prev {
 		left: -22px;
 	}
 	.bx-next {
 		right: -22px;
 	}
-
 }
 .testimonial {
 	padding: 0 1em;

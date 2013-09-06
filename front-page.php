@@ -124,7 +124,7 @@ get_header(); ?>
 				$testimonial = new WP_Query($testArg);
 				if ($testimonial->have_posts()):
 				?>
-					<div class="testimonials bxslider">
+					<div class="bxslider">
 				<?php
 				endif;
 

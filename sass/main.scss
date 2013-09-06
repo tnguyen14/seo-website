@@ -1,11 +1,13 @@
-@import '_bits';
+@import "compass/css3";
+@import "_bits";
 
-@import '_reset';
-@import '_global';
+@import "_reset";
+@import "_global";
 
-@import '_patterns';
+@import "_layout";
+@import "_patterns";
 
-@import '_components';
-@import '_header';
+@import "_components";
+@import "_header";
 
-@import '_home';
+@import "_home";

@@ -75,30 +75,27 @@
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-
-.clearfix:before,
-.clearfix:after {
-	content: " "; /* 1 */
-	display: table; /* 2 */
-}
-
-.clearfix:after {
-	clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-	*zoom: 1;
+%clearfix {
+	/*
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+ 	*/
+ 	*zoom: 1;
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+	&:after {
+		clear: both;
+	}
 }
 
 %section {
 	.section-title {
 		border-bottom: 1px solid $title-break;
 		color: $blue-header;
+		font-size: 1.3em;
+		margin: 0.5em 0;
 	}
-
 }

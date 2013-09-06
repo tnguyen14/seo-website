@@ -116,6 +116,12 @@ get_header(); ?>
 				);
 
 				$testimonial = new WP_Query($testArg);
+				if ($testimonial->have_posts()):
+				?>
+					<div class="testimonials container">
+				<?php
+				endif;
+
 				while ($testimonial->have_posts()) :
 					$testimonial->the_post();
 
@@ -130,6 +136,11 @@ get_header(); ?>
 					</div><!-- .testimonial-meta -->
 				<?php
 				endwhile;
+				if ($testimonial->have_posts()):
+				?>
+					</div><!-- .testimonials -->
+				<?php
+				endif;
 				wp_reset_postdata();
 				?>
 

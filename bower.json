@@ -9,6 +9,7 @@
     "tests"
   ],
   "dependencies": {
-    "bxslider-4": "*"
+    "bxslider-4": "*",
+    "font-awesome": "~3.2.1"
   }
 }

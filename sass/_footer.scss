@@ -12,7 +12,12 @@
 	}
 	.rights,
 	.credits {
+		color: #666;
+		font-size: 0.8em;
 		text-align: center;
+		a {
+			color: $gold;
+		}
 	}
 	.site-info {
 		margin-bottom: 1em;
@@ -20,8 +25,8 @@
 }
 .contact-info {
 	float: left;
-	width: 50%;
 	h3 {
+		font-size: 1.3em;
 		margin-bottom: 1em;
 	}
 	p {
@@ -35,11 +40,11 @@
 	}
 }
 .social-media {
+	float: right;
 	h3 {
+		font-size: 1.3em;
 		margin-bottom: 1em;
 	}
-	float: left;
-	width: 50%;
 	a {
 		@extend %ir;
 		background: url('../images/assets.png') -90px -80px;

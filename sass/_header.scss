@@ -1,5 +1,5 @@
 .site-header {
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.9);
 	margin-top: 0.5em;
 	position: relative;
 	z-index: 9999;
@@ -7,7 +7,7 @@
 
 .inner-header {
 	@extend %clearfix;
-	width: 90%;
+	width: 48em;
 	margin: 0 auto;
 }
 

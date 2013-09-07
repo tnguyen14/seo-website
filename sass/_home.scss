@@ -3,6 +3,10 @@ h2 {
 	font-weight: bold;
 }
 
+.homepage-slider {
+	@extend %clearfix;
+}
+
 .homepage-slide {
 	max-height: 34.375em;
 	overflow: hidden;

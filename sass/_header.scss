@@ -5,6 +5,12 @@
 	z-index: 9999;
 }
 
+.inner-header {
+	@extend %clearfix;
+	width: 90%;
+	margin: 0 auto;
+}
+
 .site-branding {
 	float: left;
 }
@@ -14,8 +20,27 @@
 	float: left;
 	width: auto;
 	a {
+		border-top: 5px solid transparent;
+		color: $gray;
 		height: 5em;
-		padding: 1em;
+		padding: 1.5em 1em;
+		&:visited {
+			color: $gray;
+		}
+	}
+	.menu-item {
+		@include transition (all 0.3s);
+		&:hover {
+			background-color: $blue;
+			a {
+				color: #fff;
+			}
+		}
+	}
+	.current-menu-item {
+		a {
+			border-top-color: $blue;
+		}
 	}
 }
 

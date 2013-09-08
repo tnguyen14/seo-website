@@ -99,12 +99,10 @@ module.exports = function(grunt) {
 				syncDestIgnoreExcl: true
 			},
 			staging: {
-				dest: "~/path/to/theme",
-				host: "user@host.com"
-			},
-			production: {
-				dest: "~/path/to/theme",
-				host: "user@host.com"
+				options: {
+					dest: "/home/tringuyen/webapps/inspiredev/seo-wp/wp-content/themes/seo-vietnam",
+					host: "deploy@web319.webfaction.com"
+				}
 			}
 		}
 

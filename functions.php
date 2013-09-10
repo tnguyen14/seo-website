@@ -123,8 +123,11 @@ function seo_cpt() {
 	// # Connect both of the above taxonomies with the post type
 	// connect_types_and_taxes( $demo_posts, array( $tax_tags, $tax_cats ) );
 
-	$testimonial = new Super_Custom_Post_Type('testimonial');
-	$testimonial->set_icon('thumbs-up');
+	$testimonial = new Super_Custom_Post_Type( 'testimonial' );
+	$testimonial->set_icon( 'thumbs-up' );
+
+	$program_tax = new Super_Custom_Taxonomy( 'program', 'Program', 'Programs', 'category' );
+	$program_tax->connect_post_types( 'testimonial' );
 
 	$people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
 		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),

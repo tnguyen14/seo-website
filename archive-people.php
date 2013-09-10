@@ -11,16 +11,8 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-
 			<header class="page-header people-header">
 				<h1 class="page-title ">Our People</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
 			</header><!-- .page-header -->
 			<section class="container people-group">
 				<?php

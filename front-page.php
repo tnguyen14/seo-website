@@ -18,7 +18,6 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
-
 				// Outputting the slideshow
 				$slideArg = array(
 					'post_type' => 'slideshow',
@@ -64,7 +63,7 @@ get_header(); ?>
 					<div class="inner-container">
 						<div id="about_us" class="section">
 							<?php $about_us = get_page_by_title( 'About Us' );?>
-							<h3 class="section-title">
+							<h3 class="title">
 								<?php echo $about_us->post_title; ?>
 							</h3>
 							<div class="section-content">
@@ -73,14 +72,14 @@ get_header(); ?>
 						</div><!-- #about_us-->
 
 						<div id="informercial" class="section">
-							<h3 class="section-title">Informercial</h3>
+							<h3 class="title">Informercial</h3>
 							<iframe class="youtube-embed" type="text/html" width="560" height="315"  src="//www.youtube.com/embed/BT4XtwV0ndw" frameborder="0"></iframe>
 						</div><!-- #informercial-->
 					</div>
 					<div class="inner-container">
 						<div id="vision" class="section">
 							<?php $vision = get_page_by_title( 'Vision' );?>
-							<h3 class="section-title">
+							<h3 class="title">
 								<?php echo $vision->post_title; ?>
 							</h3>
 							<div class="section-content">
@@ -90,7 +89,7 @@ get_header(); ?>
 
 						<div id="mission" class="section">
 							<?php $mission = get_page_by_title( 'Mission' );?>
-							<h3 class="section-title">
+							<h3 class="title">
 								<?php echo $mission->post_title; ?>
 							</h3>
 							<div class="section-content">
@@ -100,7 +99,7 @@ get_header(); ?>
 
 						<div id="values" class="section">
 							<?php $values = get_page_by_title( 'Values' );?>
-							<h3 class="section-title">
+							<h3 class="title">
 								<?php echo $values->post_title; ?>
 							</h3>
 							<div class="section-content">
@@ -113,7 +112,7 @@ get_header(); ?>
 				</div><!-- .container-->
 
 				<div class="container section testimonials">
-					<h3 class="section-title">Testimonials</h3>
+					<h3 class="title">Testimonials</h3>
 				<?php
 				// Outputting the Testimonials
 				$testArg = array(
@@ -157,28 +156,7 @@ get_header(); ?>
 				?>
 				</div><!-- .container -->
 
-				<h2 class="title">Our Partners</h2>
-				<div class="container partners">
-					<?php
-					// Outputting the slideshow
-						$partnerArg = array(
-							'post_type' => 'partner'
-						);
-						$partner = new WP_Query($partnerArg);
-					?>
-					<div class="partners-slide">
-						<?php
-							while($partner->have_posts()) :
-								$partner->the_post();
-						?>
-							<div class="partner">
-								<?php the_post_thumbnail(); ?>
-							</div>
-					<?php
-						endwhile; //end of partners while loop
-					wp_reset_postdata();
-					?>
-				</div><!-- .container -->
+				<?php get_template_part('templates/partners'); ?>
 
 			<?php endwhile; // end of the loop. ?>
 

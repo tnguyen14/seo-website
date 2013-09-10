@@ -45,13 +45,11 @@
 }
 
 .site-title {
-	a {
-		@extend %ir;
-		background: url(../images/assets.png) 0 -80px;
-		display: block;
-		width: 90px;
-		height: 69px;
-	}
+	@extend %ir;
+	background: url(../images/assets.png) 0 -80px;
+	margin-top: 0.3em;
+	width: 90px;
+	height: 69px;
 }
 
 // a bit of layout

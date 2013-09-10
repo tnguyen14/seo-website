@@ -1,6 +1,15 @@
+.home {
+	.site-content {
+		margin-top: 0;
+	}
+	.site-header {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 h2 {
 	font-size: 24px;
-	font-weight: bold;
 }
 
 .homepage-slider {
@@ -67,14 +76,15 @@ h2 {
 
 .list-container {
 	@extend %clearfix;
-	margin-bottom: 1em;
 }
+
 .column-3 {
 	padding: 0 1em;
 	float: left;
 	margin: 0;
 	width: 33.333333%;
 }
+
 li {
 	list-style: url('../images/list_check.png');
 }

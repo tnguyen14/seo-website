@@ -1,0 +1,39 @@
+//People
+.people-header,
+.partners-header {
+	@extend %wrapper;
+	margin-top: 2em;
+}
+
+.people-group {
+	@extend %section;
+	.people {
+		@extend %clearfix;
+	}
+	.person {
+		float: left;
+		max-width: 20em;
+		margin-right: 2em;
+	}
+}
+
+// Partners
+.partners-wrapper {
+	@extend %clearfix;
+	@extend %wrapper;
+}
+.partner-single {
+	@extend %box;
+	float: left;
+	margin: 0 1.5% 2em 1.5%;
+	padding: 1em;
+	width: 30%;
+	.image {
+		min-height: 113px; // logo-slide image height
+		text-align: center;
+	}
+	.title {
+		text-align: center;
+		border-bottom: 1px solid $title-break;
+	}
+}

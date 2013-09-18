@@ -1,4 +1,4 @@
-		<h2 class="title">Our Partners</h2>
+		<h2 class="section-title">Our Partners</h2>
 		<div class="container partners">
 			<?php
 			// Outputting the slideshow
@@ -13,7 +13,7 @@
 						$partner->the_post();
 				?>
 					<div class="partner">
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail( 'logo-slide' ); ?>
 					</div>
 			<?php
 				endwhile; //end of partners while loop

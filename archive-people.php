@@ -11,9 +11,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<header class="page-header people-header">
-				<h1 class="page-title ">Our People</h1>
-			</header><!-- .page-header -->
+			<h1 class="people-header">Our People</h1>
 			<section class="container people-group">
 				<?php
 				$term_slug = 'bod';

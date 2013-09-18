@@ -11,17 +11,24 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<header class="page-header">
-				<h1 class="page-title">Our Partners</h1>
-			</header><!-- .page-header -->
-		<?php if ( have_posts() ) : ?>
+			<h1 class="partners-header">Our Partners</h1>
+		<?php
+		$args = array(
+			'post_type'	=> 'partner',
+			'orderby'	=> 'menu_order',
+			'order'		=> 'ASC',
+			'posts_per_page'	=> -1
+		);
+		$partners = new WP_Query( $args );
+		if ( $partners->have_posts() ) : ?>
+			<div class="partners-wrapper">
 			<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="partner">
+				<?php while ( $partners->have_posts() ) : $partners->the_post(); ?>
+					<div class="partner-single">
 						<div class="image">
 							<?php the_post_thumbnail(); ?>
 						</div> <!-- End of image -->
-						<h2 class="post_title">
+						<h2 class="title">
 							<?php the_title(); ?>
 						</h2>
 						<div class="description">
@@ -29,6 +36,8 @@ get_header(); ?>
 						</div> <!-- End of description -->
 					</div> <!-- .partner -->
 				<?php endwhile; ?>
+				<?php wp_reset_postdata();?>
+			</div><!-- .container -->
 		<?php endif; ?>
 
 		</div><!-- #content -->

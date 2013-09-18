@@ -1,8 +1,16 @@
 //People
-.people-header,
-.partners-header {
+.page-title {
 	@extend %wrapper;
-	margin-top: 2em;
+	color: #666;
+	font-size: 2em;
+	margin: 1em auto 0.5em;
+	i {
+		display: inline-block;
+		font-size: 0.8em;
+		margin-right: 0.4em;
+		opacity: 0.8;
+		vertical-align: 0.1em;
+	}
 }
 
 .people-group {
@@ -21,19 +29,25 @@
 .partners-wrapper {
 	@extend %clearfix;
 	@extend %wrapper;
+
 }
 .partner-single {
 	@extend %box;
 	float: left;
-	margin: 0 1.5% 2em 1.5%;
-	padding: 1em;
+	margin: 0 3% 2em 0;
+	padding: 1em 1.5em;
 	width: 30%;
 	.image {
 		min-height: 113px; // logo-slide image height
 		text-align: center;
 	}
 	.title {
-		text-align: center;
 		border-bottom: 1px solid $title-break;
+		font-size: 1.5em;
+		padding-bottom: 0.5em;
+		text-align: center;
+	}
+	.description {
+		margin-top: 1em;
 	}
 }

@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<h1 class="partners-header">Our Partners</h1>
+			<h1 class="page-title"><i class="icon-globe"></i>Our Partners</h1>
 		<?php
 		$args = array(
 			'post_type'	=> 'partner',

@@ -177,10 +177,8 @@ function seo_vietnam_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'seo-vietnam' ),
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
+	printf( __( '<span class="posted-on"><i class="icon-calendar"></i>%1$s</span><span class="byline"> by %2$s</span>', 'seo-vietnam' ),
+		sprintf( '%1$s',
 			$time_string
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',

@@ -11,6 +11,12 @@ body {
 	margin: 0 1em;
 }
 
+.posted-on {
+	i {
+		@extend %icon;
+	}
+}
+
 // partners logo slider at the bottom of pages
 .partners {
 	background-color: #fff;

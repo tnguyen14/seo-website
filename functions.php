@@ -94,6 +94,8 @@ function seo_vietnam_scripts() {
 	wp_enqueue_script( 'seo-vietnam-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'seo-vietnam-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'bxslider', get_template_directory_uri().'/bower_components/bxslider-4/jquery.bxslider.min.js', array('jquery'),'4.1.1', true);
+	wp_enqueue_script( 'fitvids', get_template_directory_uri().'/bower_components/fitvids/jquery.fitvids.js', array('jquery'),'1.0.3', true);
+
 	wp_enqueue_script( 'seo-js', get_template_directory_uri().'/js/seo.js',array('jquery', 'bxslider'),'0.1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -48,6 +48,9 @@ jQuery(document).ready(function($){
 		});
 	};
 
-	equalizeHeights( '.partner-single' );
+	$(".format-video .entry-content").fitVids();
+
+	equalizeHeights( '.partner-single, .media-single-wrapper' );
+
 });
 

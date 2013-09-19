@@ -17,9 +17,11 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<a href="<?php echo esc_url( get_link_url() ); ?>">
-				<?php the_post_thumbnail(); ?>
-			</a>
+			<div class="thumbnail">
+				<a href="<?php echo esc_url( get_link_url() ); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
+			</div><!-- .thumbnail -->
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 		</div><!-- .entry-content -->

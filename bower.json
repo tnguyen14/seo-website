@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "bxslider-4": "*",
-    "font-awesome": "~3.2.1"
+    "font-awesome": "~3.2.1",
+    "fitvids": "~1.0.3"
   }
 }

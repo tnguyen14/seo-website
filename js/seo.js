@@ -14,25 +14,26 @@ jQuery(document).ready(function($){
 	var equalizeHeights = function(selector) {
 		var currentTallest = 0,
 			currentRowStart = 0,
-			rowDivs = new Array(),
+			rowDivs = [],
 			$el,
+			currentDiv,
 			topPosition = 0;
 
 		$(selector).each(function() {
 
 			$el = $(this);
-			topPostion = $el.position().top;
+			topPosition = $el.position().top;
 
-			if (currentRowStart != topPostion) {
+			if (currentRowStart !== topPosition) {
 
 				// we just came to a new row.  Set all the heights on the completed row
-				for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+				for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
 					rowDivs[currentDiv].height(currentTallest);
 				}
 
 				// set the variables for the new row
 				rowDivs.length = 0; // empty the array
-				currentRowStart = topPostion;
+				currentRowStart = topPosition;
 				currentTallest = $el.height();
 				rowDivs.push($el);
 
@@ -43,7 +44,7 @@ jQuery(document).ready(function($){
 			}
 
 			// do the last row
-			for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+			for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
 				rowDivs[currentDiv].height(currentTallest);
 			}
 

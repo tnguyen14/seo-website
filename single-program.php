@@ -16,7 +16,7 @@ get_header(); ?>
 				</h1>
 				<div class="content-wrapper">
 					<div class="stats">
-						<?php $stats = ['alumni', 'partner', 'guest_speakers', 'training_sessions', 'community_services']; ?>
+						<?php $stats = ['alumni', 'partners', 'guest_speakers', 'training_sessions', 'community_services']; ?>
 						<?php foreach( $stats as $stat ): ?>
 							<div class="stat">
 							<?php if (get_field( $stat )): ?>

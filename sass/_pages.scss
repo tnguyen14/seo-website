@@ -119,4 +119,15 @@
 		float: right;
 		width: 50%;
 	}
+	.stats {
+		@extend %section;
+		background-color: #f6f6f6;
+		float: left;
+		margin-right: 2em;
+		padding: 1em;
+		max-width: 40%;
+		.label {
+			color: $blue;
+		}
+	}
 }

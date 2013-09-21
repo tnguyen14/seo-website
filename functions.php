@@ -129,8 +129,8 @@ function seo_cpt() {
 	$testimonial = new Super_Custom_Post_Type( 'testimonial' );
 	$testimonial->set_icon( 'thumbs-up' );
 
-	$program_tax = new Super_Custom_Taxonomy( 'program', 'Program', 'Programs', 'category' );
-	$program_tax->connect_post_types( 'testimonial' );
+	$testi_cat = new Super_Custom_Taxonomy( 'testi_category', 'Category', 'Categories', 'category' );
+	$testi_cat->connect_post_types( 'testimonial' );
 
 	$people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
 		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),

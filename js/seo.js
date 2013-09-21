@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
-	$('.bxslider').bxSlider();
+	$('.bxslider').bxSlider({
+		pager: false
+	});
 	$('.partners-slide').bxSlider({
 		minSlides: 3,
 		maxSlides: 10,

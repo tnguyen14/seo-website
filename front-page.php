@@ -111,44 +111,31 @@ get_header(); ?>
 
 				</div><!-- .container-->
 
-				<div class="container section testimonials">
-					<h3 class="title">Testimonials</h3>
+				<h2 class="page-title"><i class="icon-comments-alt"></i>Testimonials</h3>
+				<div class="testimonials">
 				<?php
 				// Outputting the Testimonials
 				$testArg = array(
-					'post_type' => 'testimonial',
-					'orderby'   => 'rand'
+					'post_type'	=> 'testimonial',
+					'tax_query'	=> array(
+						array(
+							'taxonomy'	=> 'testi_category',
+							'field'		=> 'slug',
+							'terms'		=> 'home'
+						)
+					),
+					'orderby'	=> 'rand'
 				);
 
-				$testimonial = new WP_Query($testArg);
-				if ($testimonial->have_posts()):
+				$testimonials = new WP_Query($testArg);
+				if ($testimonials->have_posts()):
 				?>
-					<div class="bxslider">
+				<div class="bxslider">
 				<?php
-				endif;
-
-				while ($testimonial->have_posts()) :
-					$testimonial->the_post();
-
-					?>
-					<div class="testimonial">
-						<div class="testimonial-content">
-							<?php the_content(); ?>
-						</div>
-						<div class="testimonial-meta">
-							<span class="name"><?php the_title(); ?>,</span>
-							<?php if (get_field( 'credits' )): ?>
-								<span class="credits">
-								<?php the_field( 'credits' ); ?>
-								</span>
-							<?php endif; ?>
-						</div><!-- .testimonial-meta -->
-					</div>
-				<?php
-				endwhile;
-				if ($testimonial->have_posts()):
-				?>
-					</div><!-- .testimonials -->
+				while ($testimonials->have_posts()): $testimonials->the_post();
+					get_template_part('templates/testimonial');
+				endwhile;?>
+				</div><!-- .testimonials -->
 				<?php
 				endif;
 				wp_reset_postdata();

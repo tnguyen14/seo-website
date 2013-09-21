@@ -43,7 +43,6 @@ get_header(); ?>
 					<?php endwhile; // while speakers ?>
 					</div><!-- .speakers -->
 				<?php endif; // if get field speakers ?>
-				</div><!-- .speakers-wrapper -->
 
 				<?php // Testimonials ?>
 				<?php
@@ -51,20 +50,26 @@ get_header(); ?>
 					'post_type'	=> 'testimonial',
 					'posts_per_page'	=> -1,
 					'tax_query' => array(
-						'taxonomy'	=> 'program',
-						'field'		=> 'slug',
-						'term'		=> $post->post_name
-					);
+						array(
+							'taxonomy'	=> 'testi_category',
+							'field'		=> 'slug',
+							'terms'		=> $post->post_name
+						)
+					)
 				);
 				$testimonials = new WP_Query( $args );
 				if ( $testimonials->have_posts() ) : ?>
 				<div class="testimonials">
+					<h2 class="page-title"><i class="icon-comments-alt"></i>Testimonials</h2>
+					<div class="bxslider">
 				<?php
 					while ( $testimonials->have_posts() ): $testimonials->the_post();
-					endwhile;
-				endif;
-				?>
+						get_template_part( 'templates/testimonial' );
+					endwhile;?>
+					</div><!-- .bxslider -->
+				<?php endif; ?>
 				</div><!-- .testimonials -->
+				</div><!-- .secondary-wrapper -->
 			<?php endwhile; // end of the loop. ?>
 			</div><!-- .program-single -->
 		<?php endif; ?>

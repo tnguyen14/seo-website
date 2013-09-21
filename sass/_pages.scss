@@ -104,7 +104,8 @@
 	}
 	.speakers {
 		float: left;
-		width: 60%;
+		margin-right: 5%;
+		width: 45%;
 		.page-title {
 			width: 100%;
 		}
@@ -113,5 +114,9 @@
 		@extend %box;
 		margin-bottom: 0.5em;
 		padding: 1em 1.5em;
+	}
+	.testimonials {
+		float: right;
+		width: 50%;
 	}
 }

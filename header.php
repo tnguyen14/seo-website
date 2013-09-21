@@ -24,11 +24,11 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="inner-header">
 			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
+					<?php bloginfo( 'name' ); ?>
 				</h1>
+				</a>
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

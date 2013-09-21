@@ -137,11 +137,10 @@ get_header(); ?>
 						</div>
 						<div class="testimonial-meta">
 							<span class="name"><?php the_title(); ?>,</span>
-							<?php if (get_field('school')): ?>
-								<span class="school"><?php the_field('school'); ?></span>
-								<?php if(get_field('class')): ?>
-								<span class="class-year">(Class of <?php the_field('class'); ?>)</span>
-								<?php endif; ?>
+							<?php if (get_field( 'credits' )): ?>
+								<span class="credits">
+								<?php the_field( 'credits' ); ?>
+								</span>
 							<?php endif; ?>
 						</div><!-- .testimonial-meta -->
 					</div>

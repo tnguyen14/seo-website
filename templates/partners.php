@@ -1,4 +1,4 @@
-		<h2 class="section-title">Our Partners</h2>
+		<h2 class="page-title"><i class="icon-cogs"></i>Our Partners</h2>
 		<div class="container partners">
 			<?php
 			// Outputting the slideshow

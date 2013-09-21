@@ -214,3 +214,88 @@ object {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+/* =Partners
+----------------------------------------------- */
+// partners logo slider at the bottom of pages
+.partners {
+	background-color: #fff;
+	padding: 0;
+	.bx-controls-direction a {
+		opacity: 0;
+	}
+	.bx-prev {
+		left: -35px;
+	}
+	.bx-next {
+		right: -35px;
+	}
+	.bx-wrapper:hover {
+		.bx-controls-direction a {
+			opacity: 1;
+		}
+	}
+}
+.partner {
+	border-right: 1px solid #f6f6f6;
+	cursor: pointer;
+	@include filter(grayscale(1));
+	@include transition(all 0.2s);
+	&:hover {
+		@include filter(grayscale(0));
+	}
+}
+
+/* =Testimonials
+----------------------------------------------- */
+.testimonials {
+	@extend %wrapper;
+	.bx-controls-direction a {
+		opacity: 0;
+		@include transition(opacity 0.2s);
+	}
+	.bx-wrapper:hover {
+		.bx-controls-direction a {
+			opacity: 1;
+		}
+	}
+	.bx-prev {
+		left: -22px;
+	}
+	.bx-next {
+		right: -22px;
+	}
+}
+.testimonial-content {
+	background-color: #fff;
+	border: 1px solid #dfdfdf;
+	padding: 1em;
+	position: relative;
+	@include box-shadow(0 1px 1px rgba(0,0,0,0.35));
+	&:after {
+		content: "";
+		background: url("../images/assets.png") 0 -150px;
+		display: block;
+		position: absolute;
+		width: 21px;
+		height: 22px;
+		bottom: -21px;
+		left: 3em;
+	}
+	img {
+		float: left;
+		margin: 0 1em 1em 0;
+		height: auto;
+		@include filter(grayscale(1));
+		&:hover {
+			@include filter(grayscale(0));
+		}
+	}
+}
+.testimonial-meta {
+	margin-top: 1.2em;
+	@media (min-width: 48em) {
+		margin-left: 4.5em;
+		margin-top: 0.3em;
+	}
+}

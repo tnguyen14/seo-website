@@ -37,7 +37,7 @@ get_header(); ?>
 						<?php while ( has_sub_field( 'speakers' )): ?>
 						<div class="speaker">
 							<?php $speaker = get_sub_field('people');?>
-							<h4 class="speaker-name"><?php echo $speaker->post_title; ?></h4>
+							<h4 class="speaker-name title"><?php echo $speaker->post_title; ?></h4>
 							<p><?php the_field( 'credits', $speaker->ID ); ?></p>
 						</div><!-- .speaker -->
 					<?php endwhile; // while speakers ?>

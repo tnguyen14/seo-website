@@ -103,49 +103,6 @@ li {
 	@extend %clearfix;
 }
 
-.testimonials {
-	@extend %wrapper;
-	.bx-controls-direction a {
-		opacity: 0;
-		@include transition(opacity 0.2s);
-	}
-	.bx-wrapper:hover {
-		.bx-controls-direction a {
-			opacity: 1;
-		}
-	}
-	.bx-prev {
-		left: -22px;
-	}
-	.bx-next {
-		right: -22px;
-	}
-}
-.testimonial-content {
-	background-color: #fff;
-	border: 1px solid #dfdfdf;
-	padding: 1em;
-	position: relative;
-	@include box-shadow(0 1px 1px rgba(0,0,0,0.35));
-	&:after {
-		content: "";
-		background: url("../images/assets.png") 0 -150px;
-		display: block;
-		position: absolute;
-		width: 21px;
-		height: 22px;
-		bottom: -21px;
-		left: 3em;
-	}
-}
-.testimonial-meta {
-	margin-top: 1.2em;
-	@media (min-width: 48em) {
-		margin-left: 4.5em;
-		margin-top: 0.3em;
-	}
-}
-
 @media (min-width: 48em) {
 	#vision {
 		float: left;

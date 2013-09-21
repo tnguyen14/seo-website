@@ -65,6 +65,7 @@ function seo_vietnam_setup() {
 	add_image_size( 'home-slide', 1000, 9999, false );
 	add_image_size( 'people-thumb', 170, 170, false );
 	add_image_size( 'logo-slide', 125, 113, false );
+	add_image_size( 'testimonial', 80, 80, false );
 }
 endif; // seo_vietnam_setup
 add_action( 'after_setup_theme', 'seo_vietnam_setup' );

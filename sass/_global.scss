@@ -16,32 +16,3 @@ body {
 		@extend %icon;
 	}
 }
-
-// partners logo slider at the bottom of pages
-.partners {
-	background-color: #fff;
-	padding: 0;
-	.bx-controls-direction a {
-		opacity: 0;
-	}
-	.bx-prev {
-		left: -35px;
-	}
-	.bx-next {
-		right: -35px;
-	}
-	.bx-wrapper:hover {
-		.bx-controls-direction a {
-			opacity: 1;
-		}
-	}
-}
-.partner {
-	border-right: 1px solid #f6f6f6;
-	cursor: pointer;
-	@include filter(grayscale(1));
-	@include transition(all 0.2s);
-	&:hover {
-		@include filter(grayscale(0));
-	}
-}

@@ -44,7 +44,7 @@
 		text-align: center;
 	}
 	.title {
-		border-bottom: 1px solid $title-break;
+		border-bottom: 1px solid $light-gray;
 		font-size: 1.5em;
 		padding-bottom: 0.5em;
 		text-align: center;
@@ -79,16 +79,24 @@
 	}
 	.entry-meta {
 		background: #fcfcfc;
-		border-top: 1px solid #f6f6f6;
+		border-top: 1px solid $light-gray;
 		padding: 1em 1.5em;
 	}
 }
 
 // Programs
+.programs-wrapper a {
+	color: $carbon;
+	text-decoration: none;
+}
 .program-preview {
 	@extend %box;
+	@extend %section;
 	padding: 1em 1.5em;
 	margin-bottom: 1.5em;
+	&:hover {
+		background-color: #fcfcfc;
+	}
 }
 
 .program-single {
@@ -97,8 +105,11 @@
 		margin-bottom: 1em;
 		padding: 2em;
 	}
+	.secondary-wrapper {
+		margin-bottom: 2em;
+	}
 	h3 {
-		border-bottom: 1px solid #f6f6f6;
+		border-bottom: 1px solid $light-gray;
 		font-size: 1.5em;
 		margin-bottom: 0.5em;
 	}
@@ -112,16 +123,19 @@
 	}
 	.speaker {
 		@extend %box;
-		margin-bottom: 0.5em;
+		@extend %section;
 		padding: 1em 1.5em;
 	}
 	.testimonials {
 		float: right;
 		width: 50%;
+		.page-title {
+			width: 100%;
+		}
 	}
 	.stats {
 		@extend %section;
-		background-color: #f6f6f6;
+		background-color: $light-gray;
 		float: left;
 		margin-right: 2em;
 		padding: 1em;

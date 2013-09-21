@@ -1,7 +1,9 @@
 // Wrappers
 .partners-wrapper,
 .media-wrapper,
-.programs-wrapper {
+.programs-wrapper,
+.content-wrapper,
+.secondary-wrapper {
 	@extend %clearfix;
 	@extend %wrapper;
 
@@ -87,4 +89,29 @@
 	@extend %box;
 	padding: 1em 1.5em;
 	margin-bottom: 1.5em;
+}
+
+.program-single {
+	.content-wrapper {
+		@extend %box;
+		margin-bottom: 1em;
+		padding: 2em;
+	}
+	h3 {
+		border-bottom: 1px solid #f6f6f6;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	.speakers {
+		float: left;
+		width: 60%;
+		.page-title {
+			width: 100%;
+		}
+	}
+	.speaker {
+		@extend %box;
+		margin-bottom: 0.5em;
+		padding: 1em 1.5em;
+	}
 }

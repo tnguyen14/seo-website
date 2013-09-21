@@ -28,7 +28,7 @@ get_header(); ?>
 						<div class="image">
 							<?php the_post_thumbnail(); ?>
 						</div> <!-- End of image -->
-						<h2 class="title">
+						<h2 class="title partner-title">
 							<?php the_title(); ?>
 						</h2>
 						<div class="description">

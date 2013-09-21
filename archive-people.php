@@ -30,7 +30,7 @@ get_header(); ?>
 						?>
 							<div class="person">
 								<?php the_post_thumbnail( 'people-thumb' );?>
-								<h1><?php the_title(); ?> </h1>
+								<h1 class="person-title"><?php the_title(); ?></h1>
 								<div class="credits">
 									<?php the_field( 'credits' ); ?>
 								</div><!-- .credits -->

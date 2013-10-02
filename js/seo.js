@@ -82,7 +82,17 @@
 
 		$(".format-video .entry-content").fitVids();
 
-
+		// Progress bar
+		$('.progress').each(function (){
+			var totalWidth = $(this).width(),
+				$bar = $('.progress-bar', this);
+				progress = $bar.data('progress'),
+				goal = $bar.data('goal'),
+				barWidth = totalWidth * progress / goal;
+			$bar.stop().animate({
+				width: barWidth
+			}, 2000);
+		});
 	});
 })( jQuery, _ );
 

@@ -1,0 +1,21 @@
+<div class="project-single">
+	<h2 class="title"><?php the_title(); ?> </h2>
+	<?php the_post_thumbnail(); ?>
+	<div class="status">
+		<h3 class="section-title">Project Status</h3>
+		<?php if ( get_field( 'progress' ) ) : ?>
+			<h4 class="status-title">Progress</h4>
+			<div class="progress">
+				<div class="progress-bar" data-progress="<?php the_field( 'progress' ); ?>" data-goal="100"></div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( get_field( 'funding_goal' ) && get_field( 'funding_progress' ) ): ?>
+			<h4 class="status-title">Funding</h4>
+			<div class="progress">
+				<div class="progress-bar" data-progress="<?php the_field( 'funding_progress' );?>" data-goal="<?php the_field( 'funding_goal' ); ?>"></div>
+			</div>
+		<?php endif; ?>
+
+	</div><!-- .status -->
+</div><!-- .project-single -->

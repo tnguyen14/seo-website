@@ -165,3 +165,43 @@
 		}
 	}
 }
+
+// Help Us Page
+.help-us {
+	@extend %wrapper;
+}
+.project-container {
+	@extend %box;
+	@extend %section;
+	padding: 2em 1em;
+}
+.project-single {
+	@extend %clearfix;
+	.wp-post-image {
+		width: 700px;
+		height: auto;
+	}
+}
+.status {
+	float: right;
+	width: 30%;
+	.section-title {
+		margin: 0 0 0.5em 0;
+	}
+	.status-title {
+		color: $blue;
+		font-size: 1.2em;
+		margin-bottom: 0.5em;
+	}
+}
+// Progress bars
+.progress {
+	background-color: $light-gray;
+	height: 2em;
+	margin-bottom: 1em;
+	.progress-bar {
+		background-color: $blue;
+		height: 100%;
+		width: 0;
+	}
+}

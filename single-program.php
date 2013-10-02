@@ -31,18 +31,22 @@ get_header(); ?>
 				</div><!-- .content-wrap -->
 
 				<div class="secondary-wrapper">
+
+				<?php // Speakers ?>
 				<?php if ( get_field( 'speakers' ) ): ?>
 					<div class="speakers">
 						<h2 class="page-title"><i class="icon-microphone"></i>Speakers</h2>
-						<?php while ( has_sub_field( 'speakers' )): ?>
-						<div class="speaker">
-							<?php $speaker = get_sub_field('people');?>
-							<h4 class="speaker-name title"><?php echo $speaker->post_title; ?></h4>
-							<p><?php the_field( 'credits', $speaker->ID ); ?></p>
-						</div><!-- .speaker -->
-					<?php endwhile; // while speakers ?>
+						<div class="speaker-wrap bxslider">
+							<?php while ( has_sub_field( 'speakers' )): ?>
+							<div class="speaker">
+								<?php $speaker = get_sub_field('people');?>
+								<h4 class="speaker-name title"><?php echo $speaker->post_title; ?></h4>
+								<p><?php the_field( 'credits', $speaker->ID ); ?></p>
+							</div><!-- .speaker -->
+							<?php endwhile; // while speakers ?>
+						</div><!-- .speaker-wrap -->
 					</div><!-- .speakers -->
-				<?php endif; // if get field speakers ?>
+				<?php endif; // if speakers ?>
 
 				<?php // Testimonials ?>
 				<?php
@@ -67,8 +71,9 @@ get_header(); ?>
 						get_template_part( 'templates/testimonial' );
 					endwhile;?>
 					</div><!-- .bxslider -->
-				<?php endif; ?>
 				</div><!-- .testimonials -->
+				<?php endif; ?>
+
 				</div><!-- .secondary-wrapper -->
 			<?php endwhile; // end of the loop. ?>
 			</div><!-- .program-single -->

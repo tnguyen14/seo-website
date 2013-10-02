@@ -215,6 +215,30 @@ object {
 	display: block;
 }
 
+/* =bxsliders
+----------------------------------------------- */
+.bx-wrapper {
+	&:hover {
+		.bx-controls {
+			opacity: 1;
+		}
+	}
+	.bx-viewport {
+		background: none;
+		border: none;
+		left: 0;
+		@include box-shadow(none);
+	}
+	.bx-controls {
+		position: absolute;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		@include transition(opacity 0.2s);
+	}
+}
+
 /* =Partners
 ----------------------------------------------- */
 // partners logo slider at the bottom of pages
@@ -250,15 +274,6 @@ object {
 ----------------------------------------------- */
 .testimonials {
 	@extend %wrapper;
-	.bx-controls-direction a {
-		opacity: 0;
-		@include transition(opacity 0.2s);
-	}
-	.bx-wrapper:hover {
-		.bx-controls-direction a {
-			opacity: 1;
-		}
-	}
 	.bx-prev {
 		left: -22px;
 	}

@@ -33,15 +33,6 @@
 	}
 }
 
-.bx-wrapper {
-	.bx-viewport {
-		background: none;
-		border: none;
-		left: 0;
-		@include box-shadow(none);
-	}
-}
-
 .container {
 	@extend %clearfix;
 	@extend %box;
@@ -81,6 +72,10 @@
 	float: left;
 	margin: 0;
 	width: 33.333333%;
+}
+
+.testimonials {
+	@extend %bx-arrow;
 }
 
 li {

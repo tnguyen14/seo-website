@@ -112,9 +112,55 @@
 }
 
 %icon {
-		display: inline-block;
-		font-size: 0.8em;
-		margin-right: 0.4em;
-		opacity: 0.8;
-		vertical-align: 0.1em;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 0.4em;
+	opacity: 0.8;
+	vertical-align: 0.1em;
+}
+
+%bx-arrow {
+	.bx-controls-direction {
+		height: 100%;
+		a {
+			background: none;
+			color: $gray;
+			display: block;
+			height: 100%;
+			margin-top: 0;
+			position: relative;
+			top: auto;
+			right: auto;
+			left: auto;
+			text-decoration: none;
+			width: 10%;
+			@extend %ir;
+			&:hover {
+				background-color: rgba(0,0,0,0.1);
+			}
+			&:before {
+				font-family: "FontAwesome";
+				display: block;
+				font-size: 4em;
+				margin-top: 1em;
+				text-indent: 0;
+				width: auto;
+			}
+		}
+		.bx-prev {
+			float: left;
+			&:before {
+				content: "\f104";
+				padding-left: 0.5em;
+			}
+		}
+		.bx-next {
+			float: right;
+			&:before {
+				content: "\f105";
+				padding-right: 0.5em;
+				text-align: right;
+			}
+		}
 	}
+}

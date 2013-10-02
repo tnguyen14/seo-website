@@ -125,7 +125,7 @@ get_header(); ?>
 				$testimonials = new WP_Query($testArg);
 				if ($testimonials->have_posts()):
 				?>
-				<div class="bxslider">
+				<div class="bxslider testimonials">
 				<?php
 				while ($testimonials->have_posts()): $testimonials->the_post();
 					get_template_part('templates/testimonial');

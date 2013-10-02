@@ -187,8 +187,11 @@
 		width: 100%;
 		height: auto;
 	}
-	.feature-image {
+	.feature-wrap {
+		@extend %clearfix;
 		margin-bottom: 1em;
+	}
+	.feature-image {
 		width: 700px;
 		@media ( min-width: 62.5em ) {
 			float: left;

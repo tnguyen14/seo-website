@@ -1,8 +1,10 @@
 <div class="project-single">
-	<h2 class="title"><?php the_title(); ?> </h2>
-	<?php the_post_thumbnail(); ?>
+	<h2 class="title"><?php the_title(); ?></h2>
+	<div class="feature-image">
+		<?php the_post_thumbnail(); ?>
+	</div>
 	<div class="status">
-		<h3 class="section-title">Project Status</h3>
+		<h3 class="title">Project Status</h3>
 		<?php if ( get_field( 'progress' ) ) : ?>
 			<h4 class="status-title">Progress</h4>
 			<div class="progress">

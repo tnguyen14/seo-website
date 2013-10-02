@@ -169,28 +169,51 @@
 // Help Us Page
 .help-us {
 	@extend %wrapper;
+	.section-title {
+		color: $gray;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+		width: 100%;
+	}
 }
 .project-container {
 	@extend %box;
 	@extend %section;
-	padding: 2em 1em;
+	padding: 1em 1em;
 }
 .project-single {
 	@extend %clearfix;
 	.wp-post-image {
-		width: 700px;
+		width: 100%;
 		height: auto;
+	}
+	.feature-image {
+		margin-bottom: 1em;
+		width: 700px;
+		@media ( min-width: 62.5em ) {
+			float: left;
+			max-width: 65%;
+		}
+	}
+	.description {
+		clear: left;
 	}
 }
 .status {
-	float: right;
-	width: 30%;
-	.section-title {
+	@media (min-width: 62.5em ) {
+		float: right;
+		width: 30%;
+	}
+	.title {
+		border: none;
+		color: $gray;
+		font-size: 1.3em;
 		margin: 0 0 0.5em 0;
+		padding-left: 0;
 	}
 	.status-title {
 		color: $blue;
-		font-size: 1.2em;
+		font-size: 1.1em;
 		margin-bottom: 0.5em;
 	}
 }

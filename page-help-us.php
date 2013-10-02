@@ -11,7 +11,6 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
 				<h1 class="page-title"><i class="icon-heart"></i><?php the_title();?></h1>
 				<section class="help-us">
 				<?php if ( get_field( 'open_testimonial' ) ):
@@ -43,7 +42,7 @@ get_header(); ?>
 					);
 					$seo_projects = new WP_Query( $seo_args );
 					if ( $seo_projects->have_posts() ): ?>
-						<h2 class="page-title"><?php echo $seo_term->name; ?></h2>
+						<h2 class="section-title"><?php echo $seo_term->name; ?></h2>
 						<div class="project-container">
 						<?php
 							while ( $seo_projects->have_posts() ): $seo_projects->the_post();
@@ -70,7 +69,7 @@ get_header(); ?>
 					);
 					$alumni_projects = new WP_Query( $alumni_args );
 					if ( $alumni_projects->have_posts() ): ?>
-						<h2 class="page-title"><?php echo $alumni_term->name; ?></h2>
+						<h2 class="section-title"><?php echo $alumni_term->name; ?></h2>
 						<div class="project-container">
 						<?php
 							while ( $alumni_projects->have_posts() ): $alumni_projects->the_post();

@@ -153,10 +153,11 @@ function seo_cpt() {
 	$program->set_icon('windows');
 
 	$project = new Super_Custom_Post_Type('project', 'Project', 'Projects', array(
-		'supports' => array('title','editor', 'thumbnail', 'revisions', 'page-attributes'),
-		'taxonomies' => array('category')
+		'supports' => array('title','editor', 'thumbnail', 'page-attributes'),
 	));
 	$project->set_icon('cogs');
+	$project_tax = new Super_Custom_Taxonomy( 'project_tax', 'Type', 'Types', 'category');
+	$project_tax->connect_post_types( 'project' );
 }
 add_action( 'after_setup_theme', 'seo_cpt' );
 

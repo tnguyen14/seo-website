@@ -16,6 +16,8 @@
 				<div class="progress-bar" data-progress="<?php the_field( 'funding_progress' );?>" data-goal="<?php the_field( 'funding_goal' ); ?>"></div>
 			</div>
 		<?php endif; ?>
-
 	</div><!-- .status -->
+	<div class="description">
+		<?php the_content(); ?>
+	</div>
 </div><!-- .project-single -->

@@ -227,7 +227,7 @@ object {
 		background: none;
 		border: none;
 		left: 0;
-		@include box-shadow(none);
+		box-shadow: none;
 	}
 	.bx-controls {
 		position: absolute;
@@ -235,7 +235,7 @@ object {
 		width: 100%;
 		height: 100%;
 		top: 0;
-		@include transition(opacity 0.2s);
+		transition: opacity 0.2s;
 	}
 }
 
@@ -263,10 +263,10 @@ object {
 .partner {
 	border-right: 1px solid #f6f6f6;
 	cursor: pointer;
-	@include filter(grayscale(1));
-	@include transition(all 0.2s);
+	filter: grayscale(1);
+	transition: all 0.2s;
 	&:hover {
-		@include filter(grayscale(0));
+		filter: grayscale(0);
 	}
 }
 
@@ -286,7 +286,7 @@ object {
 	border: 1px solid #dfdfdf;
 	padding: 1em;
 	position: relative;
-	@include box-shadow(0 1px 1px rgba(0,0,0,0.35));
+	box-shadow: 0 1px 1px rgba(0,0,0,0.35);
 	&:after {
 		content: "";
 		background: url("../images/assets.png") 0 -150px;
@@ -301,9 +301,9 @@ object {
 		float: left;
 		margin: 0 1em 1em 0;
 		height: auto;
-		@include filter(grayscale(1));
+		filter: grayscale(1);
 		&:hover {
-			@include filter(grayscale(0));
+			filter: grayscale(0);
 		}
 	}
 }

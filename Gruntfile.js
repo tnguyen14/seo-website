@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		watch: {
 			compass: {
 				files: ['sass/**/*.{scss,sass}'],
-				tasks: ['compass']
+				tasks: ['sass', "autoprefixer"]
 			},
 			js: {
 				files: '<%= jshint.all %>',
@@ -29,6 +29,30 @@ module.exports = function(grunt) {
 				options: {
 					config: 'config.rb',
 				}
+			}
+		},
+
+		sass: {
+			dev: {
+				options: {
+					style: 'expanded',
+					sourcemap: true
+				},
+				files: {
+					'css/main.css': 'sass/main.scss'
+				}
+			}
+		},
+		autoprefixer: {
+			dev: {
+				src: 'css/main.css',
+				dest: 'css/main.css'
+			}
+		},
+		csso: {
+			prod: {
+				src: 'css/main.css',
+				dest: 'css/main.css'
 			}
 		},
 
@@ -90,7 +114,7 @@ module.exports = function(grunt) {
 		},
 
 		// deploy via rsync
-		deploy: {
+		rsync: {
 			options: {
 				args: ["--verbose"],
 				src: "./",
@@ -108,10 +132,20 @@ module.exports = function(grunt) {
 
 	});
 
-	// rename tasks
-	grunt.renameTask('rsync', 'deploy');
+	grunt.registerTask('deploy', [
+		'sass',
+		'autoprefixer',
+		'csso',
+		'jshint',
+		'rsync'
+	]);
 
 	// register task
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', [
+		'sass',
+		'autoprefixer',
+		'jshint',
+		'watch'
+	]);
 
 };

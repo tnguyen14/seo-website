@@ -29,6 +29,40 @@
 		float: left;
 		max-width: 20em;
 		margin-right: 2em;
+		position: relative;
+		text-align: center;
+		.description {
+			background-color: rgba(250, 250, 250, 0.9);
+			height: 90%;
+			height: calc(100% - 30px);
+			overflow-y: scroll;
+			padding: 1em 0.5em;
+			position: absolute;
+			text-align: left;
+			top: 0;
+		}
+	}
+	.person-title {
+		font-size: 1.2em;
+		text-align: left;
+	}
+	.credits {
+		color: $gray;
+		font-size: 0.9em;
+		text-align: left;
+	}
+	.description {
+		display: none;
+	}
+	.expandible {
+		&:before {
+			content: "-Less"
+		}
+		&.collapsed {
+			&:before {
+				content: "+More"
+			}
+		}
 	}
 }
 

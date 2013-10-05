@@ -23,7 +23,7 @@ get_header(); ?>
 					$slideshow = new WP_Query($slideArg);
 					?>
 
-					<div class="homepage-slider bxslider">
+					<div class="homepage-slider">
 
 					<?php
 						while($slideshow->have_posts()) :

@@ -179,7 +179,7 @@ object {
 ----------------------------------------------- */
 .bx-wrapper {
 	&:hover {
-		.bx-controls {
+		.bx-controls-direction {
 			opacity: 1;
 		}
 	}
@@ -189,7 +189,7 @@ object {
 		left: 0;
 		box-shadow: none;
 	}
-	.bx-controls {
+	.bx-controls-direction {
 		opacity: 0;
 		transition: opacity 0.2s;
 	}
@@ -236,6 +236,19 @@ object {
 	.bx-controls-direction {
 		a {
 			height: 90%;
+			&:before {
+				padding-top: 1em;
+			}
+		}
+		.bx-prev {
+			&:before {
+				padding-left: 0.5em;
+			}
+		}
+		.bx-next {
+			&:before {
+				padding-right: 0.5em;
+			}
 		}
 	}
 }

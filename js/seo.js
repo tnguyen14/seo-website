@@ -76,6 +76,19 @@
 		$('.bxslider').bxSlider({
 			pager: false
 		});
+		$('.testimonials').bxSlider({
+			auto: true,
+			pause: 4000
+		})
+		$('.homepage-slider').bxSlider({
+			pager: false,
+			auto: true,
+			pause: 6000
+		});
+		$('.speaker-wrap').bxSlider({
+			auto: true,
+			pause: 4000
+		});
 		$('.partners-slider').bxSlider({
 			minSlides: 3,
 			maxSlides: 10,

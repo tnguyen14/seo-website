@@ -25,6 +25,7 @@
 	}
 	.feature-image {
 		width: 700px;
+		max-width: 100%;
 		@media ( min-width: 62.5em ) {
 			float: left;
 			max-width: 65%;

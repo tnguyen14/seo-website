@@ -1,14 +1,4 @@
 //People
-.page-title {
-	@extend %wrapper;
-	color: #666;
-	font-size: 2em;
-	margin: 1em auto 0.5em;
-	i {
-		@extend %icon;
-	}
-}
-
 .people-group {
 	@extend %section;
 	.people {

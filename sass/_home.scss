@@ -1,6 +1,8 @@
 .home {
 	.site-content {
-		margin-top: 0;
+		@media screen and (min-width: 48.75em) {
+			margin-top: 0;
+		}
 	}
 	.site-header {
 		margin-left: auto;
@@ -35,12 +37,12 @@
 
 .container {
 	@extend %clearfix;
+	@extend %wrapper;
 	@extend %box;
-	margin: 1em auto 2em;
+	margin-top: 1em;
+	margin-bottom: 2em;
 	padding: 1.5em 2em;
 	position: relative;
-	width: 90%;
-
 	&:after {
 		border-top: 1px solid #e0dfdf;
 		border-bottom: 1px solid #fcfcfc;

@@ -1,41 +1,89 @@
 .site-header {
-	background-color: rgba(255, 255, 255, 0.9);
-	box-shadow: 0 1px 1px rgba(0,0,0,0.35);
-	margin-top: 0.5em;
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
 	position: relative;
 	z-index: 9999;
+	@media screen and (min-width: 48.75em) {
+		background-color: rgba(255, 255, 255, 0.9);
+		margin-top: 0.5em;
+	}
 }
 
 .inner-header {
 	@extend %clearfix;
 	width: 48em;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
 .site-branding {
 	float: left;
+	margin-top: 0.3em;
+	@media screen and (max-width: 48.75em) {
+		margin-left: 1em;
+	}
 }
 
+// Menu
 .main-navigation{
 	clear: none;
-	float: left;
+	display: block;
+	float: right;
 	width: auto;
+	@media screen and (min-width: 30em) {
+		width: 70%;
+	}
+	@media screen and (min-width: 48.75em) {
+		width: auto;
+	}
+	@media screen and (max-width: 48.75em) {
+		margin-right: 1em;
+		margin-bottom: 1em;
+		&.toggled {
+			.nav-menu {
+				display: block;
+			}
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		@media screen and (max-width: 48.75em) {
+			display: none;
+		}
+	}
 	a {
 		border-top: 5px solid transparent;
 		color: $gray;
+		display: inline-block;
 		height: 5em;
 		padding: 1.5em 1em;
+		text-decoration: none;
 		&:visited {
 			color: $gray;
 		}
+		@media screen and (max-width: 48.75em) {
+			height: auto;
+			padding: 0.5em 1em;
+		}
 	}
 	.menu-item {
+		@extend %clearfix;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+		position: relative;
 		transition: all 0.3s;
 		&:hover {
 			background-color: $blue;
 			a {
 				color: #fff;
 			}
+		}
+		@media screen and (max-width: 48.75em) {
+			float: none;
+			text-align: center;
 		}
 	}
 	.current-menu-item {
@@ -44,11 +92,28 @@
 		}
 	}
 }
+// Small Menu
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+	text-align: right;
+	@media screen and (max-width: 48.75em) {
+		display: block;
+	}
+	i {
+		display: inline-block;
+		font-size: 2em;
+		padding: 0.5em;
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+		}
+	}
+}
 
 .site-title {
 	@extend %ir;
 	background: url(../images/assets.png) 0 -80px;
-	margin: 0.3em 3em 0 0;
 	width: 90px;
 	height: 69px;
 }

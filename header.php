@@ -32,7 +32,7 @@
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'seo-vietnam' ); ?></h1>
+				<h1 class="menu-toggle"><i class="icon-reorder"></i><span class="visuallyhidden"><?php _e( 'Menu', 'seo-vietnam' ); ?></span></h1>
 				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'seo-vietnam' ); ?>"><?php _e( 'Skip to content', 'seo-vietnam' ); ?></a></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->

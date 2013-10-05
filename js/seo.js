@@ -1,51 +1,48 @@
-(function($, _) {
+(function ($, _) {
 	// selectors is an array of selectors
-	var equalizeRowHeights = function(selectors) {
+	var equalizeRowHeights = function (selectors) {
 		if (!_.isArray(selectors)) {
 			selectors = [selectors];
 		}
 		_.each(selectors, function( el ) {
 			var currentTallest = 0,
 				currentRowStart = 0,
+				rowNum = 0,
 				rowDivs = [],
 				$el,
 				currentDiv,
 				topPosition = 0;
 
-			$(el).each(function() {
+			$(el).each(function () {
 
 				$el = $(this);
-				topPosition = $el.position().top;
+				topPosition = $el.offset().top;
 
 				if (currentRowStart !== topPosition) {
-
 					// we just came to a new row.  Set all the heights on the completed row
 					for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
 						rowDivs[currentDiv].height(currentTallest);
 					}
-
 					// set the variables for the new row
 					rowDivs.length = 0; // empty the array
 					currentRowStart = topPosition;
 					currentTallest = $el.height();
 					rowDivs.push($el);
-
 				} else {
 					// another div on the current row.  Add it to the list and check if it's taller
 					rowDivs.push($el);
 					currentTallest = Math.max(currentTallest, $el.height());
 				}
-
 				// do the last row
 				for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
+
 					rowDivs[currentDiv].height(currentTallest);
 				}
-
 			});
 		});
 	};
 
-	var equalizeHeights = function( selectors ) {
+	var equalizeHeights = function (selectors) {
 		if (!_.isArray(selectors)) {
 			selectors = [selectors];
 		}
@@ -59,14 +56,16 @@
 		});
 	};
 
-	jQuery(document).ready(function($){
+	$(document).ready(function ($){
 
 		equalizeRowHeights([
 			'.partner-single',
-			'.media-single-wrapper'
+			'.media-single-wrapper',
+			'.people .person'
 		]);
 
 		equalizeHeights('.testimonials .testimonial-content');
+
 
 		$('.bxslider').bxSlider({
 			pager: false
@@ -85,13 +84,21 @@
 		// Progress bar
 		$('.progress').each(function (){
 			var totalWidth = $(this).width(),
-				$bar = $('.progress-bar', this);
+				$bar = $('.progress-bar', this),
 				progress = $bar.data('progress'),
 				goal = $bar.data('goal'),
 				barWidth = totalWidth * progress / goal;
+
 			$bar.stop().animate({
 				width: barWidth
 			}, 2000);
+		});
+
+		// People
+		$('.expandible').click(function () {
+			$(this).toggleClass('collapsed');
+			$(this).siblings('.description').toggle();
+			equalizeRowHeights(['.people .person']);
 		});
 	});
 })( jQuery, _ );

@@ -34,10 +34,10 @@ get_header(); ?>
 								<div class="credits">
 									<?php the_field( 'credits' ); ?>
 								</div><!-- .credits -->
-								<a class="collapse">More</a>
 								<div class="description">
 									<?php the_content(); ?>
 								</div><!-- .description -->
+								<a class="expandible collapsed"></a>
 							</div><!-- .person -->
 						<?php endforeach;
 						wp_reset_postdata();

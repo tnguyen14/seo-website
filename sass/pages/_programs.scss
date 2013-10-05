@@ -1,0 +1,81 @@
+// Programs
+.programs-wrapper a {
+	color: $carbon;
+	text-decoration: none;
+}
+.program-preview {
+	@extend %box;
+	@extend %section;
+	padding: 1em 1.5em;
+	margin-bottom: 1.5em;
+	&:hover {
+		background-color: #fcfcfc;
+	}
+}
+
+.program-single {
+	.content-wrapper {
+		@extend %box;
+		margin-bottom: 1em;
+		padding: 2em;
+	}
+	.secondary-wrapper {
+		margin-bottom: 2em;
+	}
+	h3 {
+		border-bottom: 1px solid $light-gray;
+		display: inline-block;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	.speakers {
+		@extend %bx-arrow;
+		float: left;
+		margin-right: 5%;
+		width: 45%;
+		.page-title {
+			width: 100%;
+		}
+		.bx-controls-direction {
+			a {
+				width: 20%;
+			}
+		}
+	}
+	.speaker-wrap {
+		@extend %clearfix;
+		@extend %box;
+
+	}
+	.speaker {
+		// @extend %box;
+		@extend %section;
+		padding: 1em 1.5em;
+		.title {
+			padding-left: 0;
+		}
+	}
+	.testimonials {
+		float: right;
+		width: 50%;
+		.page-title {
+			width: 100%;
+		}
+		.bx-controls-direction {
+			a {
+				width: 20%;
+			}
+		}
+	}
+	.stats {
+		@extend %section;
+		background-color: $light-gray;
+		float: right;
+		margin-left: 2em;
+		padding: 1em;
+		max-width: 40%;
+		.label {
+			color: $blue;
+		}
+	}
+}

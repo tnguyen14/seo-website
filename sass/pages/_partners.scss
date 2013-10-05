@@ -1,0 +1,21 @@
+// Partners
+.partner-single, {
+	@extend %box;
+	float: left;
+	margin: 0 3% 2em 0;
+	padding: 1em 1.5em;
+	width: 30%;
+	.image {
+		min-height: 113px; // logo-slide image height
+		text-align: center;
+	}
+	.title {
+		border-bottom: 1px solid $light-gray;
+		font-size: 1.5em;
+		padding-bottom: 0.5em;
+		text-align: center;
+	}
+	.description {
+		margin-top: 1em;
+	}
+}

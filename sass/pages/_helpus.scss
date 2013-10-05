@@ -1,0 +1,65 @@
+// Help Us Page
+.help-us {
+	@extend %wrapper;
+	.section-title {
+		color: $gray;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+		width: 100%;
+	}
+}
+.project-container {
+	@extend %box;
+	@extend %section;
+	padding: 1em 1em;
+}
+.project-single {
+	@extend %clearfix;
+	.wp-post-image {
+		width: 100%;
+		height: auto;
+	}
+	.feature-wrap {
+		@extend %clearfix;
+		margin-bottom: 1em;
+	}
+	.feature-image {
+		width: 700px;
+		@media ( min-width: 62.5em ) {
+			float: left;
+			max-width: 65%;
+		}
+	}
+	.description {
+		clear: left;
+	}
+}
+.status {
+	@media (min-width: 62.5em ) {
+		float: right;
+		width: 30%;
+	}
+	.title {
+		border: none;
+		color: $gray;
+		font-size: 1.3em;
+		margin: 0 0 0.5em 0;
+		padding-left: 0;
+	}
+	.status-title {
+		color: $blue;
+		font-size: 1.1em;
+		margin-bottom: 0.5em;
+	}
+}
+// Progress bars
+.progress {
+	background-color: $light-gray;
+	height: 2em;
+	margin-bottom: 1em;
+	.progress-bar {
+		background-color: $blue;
+		height: 100%;
+		width: 0;
+	}
+}

@@ -1,0 +1,29 @@
+// Media
+.media-single {
+	@extend %box;
+	float: left;
+	margin-right: 5%;
+	width: 45%;
+	.media-single-wrapper {
+		padding: 1em 1.5em;
+	}
+	.entry-title {
+		font-size: 1.2em;
+		a {
+			color: $blue;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.thumbnail {
+		margin-bottom: 0.5em;
+		text-align: center;
+	}
+	.entry-meta {
+		background: #fcfcfc;
+		border-top: 1px solid $light-gray;
+		padding: 1em 1.5em;
+	}
+}

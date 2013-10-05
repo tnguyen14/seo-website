@@ -58,6 +58,12 @@
 
 	$(document).ready(function ($){
 
+		// throttle resize function
+		// $(window).resize(_.throttle(function(){
+		// 	console.log('resizing');
+
+		// }, 500)).trigger('resize');
+
 		equalizeRowHeights([
 			'.partner-single',
 			'.media-single-wrapper',

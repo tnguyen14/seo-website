@@ -7,7 +7,7 @@
 		);
 		$partner = new WP_Query($partnerArg);
 	?>
-	<div class="partners-slide">
+	<div class="partners-slider">
 		<?php
 			while($partner->have_posts()) :
 				$partner->the_post();

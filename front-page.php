@@ -11,40 +11,47 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
+				<div class="homepage-slider-wrapper">
+					<?php
+					// Outputting the slideshow
+					$slideArg = array(
+						'post_type' => 'slideshow',
+						'orderby'	=> 'menu_order',
+						'order'		=> 'ASC'
+					);
 
-				<?php
-				// Outputting the slideshow
-				$slideArg = array(
-					'post_type' => 'slideshow',
-					'orderby'	=> 'menu_order',
-					'order'		=> 'ASC'
-				);
+					$slideshow = new WP_Query($slideArg);
+					?>
 
-				$slideshow = new WP_Query($slideArg);
-				?>
+					<div class="homepage-slider bxslider">
 
-				<div class="homepage-slider bxslider">
+					<?php
+						while($slideshow->have_posts()) :
+							$slideshow->the_post();
+					?>
+							<div class="homepage-slide">
+								<?php if ( get_field( 'link' ) ):?>
+									<a href="<?php the_field( 'link' ); ?>">
+								<?php endif; ?>
+									<h2 class="slide-text"><?php echo get_the_content();?></h2>
+									<?php if ( get_field( 'link' ) ):?>
+									</a>
+								<?php endif; ?>
 
-				<?php
-					while($slideshow->have_posts()) :
-						$slideshow->the_post();
-				?>
-						<div class="homepage-slide">
-							<h2 class="slide-text"><?php echo get_the_content();?></h2>
-
-							<?php
-								if (has_post_thumbnail()) :
-									the_post_thumbnail('home-slide');
-								endif;
-							?>
-						</div><!-- .homepage-slide -->
-				<?php
-					endwhile; //end of slideshow while loop
-				?>
-				</div>
-				<?php
-				wp_reset_postdata();
-				?>
+								<?php
+									if (has_post_thumbnail()) :
+										the_post_thumbnail('home-slide');
+									endif;
+								?>
+							</div><!-- .homepage-slide -->
+					<?php
+						endwhile; //end of slideshow while loop
+					?>
+					</div><!-- .homepage-slider -->
+					<?php
+					wp_reset_postdata();
+					?>
+				</div><!-- .homepage-slider-wrapper -->
 				<div class="container section">
 				<?php
 					the_content();
@@ -107,7 +114,7 @@ get_header(); ?>
 				</div><!-- .container-->
 
 				<h2 class="page-title"><i class="icon-comments-alt"></i>Testimonials</h3>
-				<div class="testimonials">
+				<div class="testimonials-wrapper">
 				<?php
 				// Outputting the Testimonials
 				$testArg = array(
@@ -135,7 +142,7 @@ get_header(); ?>
 				endif;
 				wp_reset_postdata();
 				?>
-				</div><!-- .container -->
+				</div><!-- .testimonials-wrapper -->
 
 				<?php get_template_part('templates/partners'); ?>
 

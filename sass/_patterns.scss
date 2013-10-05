@@ -115,6 +115,7 @@
 	.bx-controls-direction {
 		a {
 			@extend %ir;
+			background: none;
 			color: $gray;
 			display: block;
 			height: 100%;
@@ -154,7 +155,6 @@
 	.bx-controls-direction {
 		height: 100%;
 		a {
-			background: none;
 			margin-top: 0;
 			position: relative;
 			top: auto;

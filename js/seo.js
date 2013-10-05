@@ -76,7 +76,7 @@
 		$('.bxslider').bxSlider({
 			pager: false
 		});
-		$('.partners-slide').bxSlider({
+		$('.partners-slider').bxSlider({
 			minSlides: 3,
 			maxSlides: 10,
 			slideWidth: 126,

@@ -1,5 +1,5 @@
 <h2 class="page-title"><i class="icon-cogs"></i>Our Partners</h2>
-<div class="container partners">
+<div class="partners">
 	<?php
 	// Outputting the slideshow
 		$partnerArg = array(

@@ -230,11 +230,7 @@ object {
 		box-shadow: none;
 	}
 	.bx-controls {
-		position: absolute;
 		opacity: 0;
-		width: 100%;
-		height: 100%;
-		top: 0;
 		transition: opacity 0.2s;
 	}
 }
@@ -243,21 +239,24 @@ object {
 ----------------------------------------------- */
 // partners logo slider at the bottom of pages
 .partners {
+	@extend %wrapper;
+	@extend %bx-arrow;
 	background-color: #fff;
-	padding: 0;
+	padding: 1.5em 2em;
+	margin-bottom: 2em;
 	.bx-controls-direction a {
-		opacity: 0;
+		background: none;
+		margin-top: 0;
+		top: 0;
+		width: 3em;
 	}
 	.bx-prev {
 		left: -35px;
+		padding-left: 0.5em;
 	}
 	.bx-next {
 		right: -35px;
-	}
-	.bx-wrapper:hover {
-		.bx-controls-direction a {
-			opacity: 1;
-		}
+		padding-right: 0.5em;
 	}
 }
 .partner {
@@ -274,11 +273,11 @@ object {
 ----------------------------------------------- */
 .testimonials {
 	@extend %wrapper;
-	.bx-prev {
-		left: -22px;
-	}
-	.bx-next {
-		right: -22px;
+	@extend %bx-controls;
+	.bx-controls-direction {
+		a {
+			height: 90%;
+		}
 	}
 }
 .testimonial-content {

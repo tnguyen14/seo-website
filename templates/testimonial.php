@@ -1,5 +1,4 @@
 <div class="testimonial">
-
 	<div class="testimonial-content">
 		<?php if ( has_post_thumbnail() ) :
 			the_post_thumbnail( 'testimonial' );

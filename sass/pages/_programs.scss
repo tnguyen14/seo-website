@@ -39,15 +39,23 @@
 	}
 	.speakers {
 		@extend %bx-controls;
-		float: left;
-		margin-right: 5%;
-		width: 45%;
+		@media (min-width: 62.5em) {
+			float: left;
+			margin-right: 5%;
+			width: 45%;
+		}
 		.page-title {
 			width: 100%;
 		}
 		.bx-controls-direction {
 			a {
-				width: 20%;
+				padding-top: 2em;
+			}
+			.bx-prev {
+				padding-left: 0.5em;
+			}
+			.bx-next {
+				padding-right: 0.5em;
 			}
 		}
 	}
@@ -57,22 +65,41 @@
 
 	}
 	.speaker {
-		// @extend %box;
 		@extend %section;
 		padding: 1em 1.5em;
 		.title {
 			padding-left: 0;
 		}
 	}
-	.testimonials {
-		float: right;
-		width: 50%;
+	.testimonials-wrapper {
+		@extend %bx-arrow;
+		@media (min-width: 62.5em) {
+			float: right;
+			width: 50%;
+		}
 		.page-title {
 			width: 100%;
 		}
 		.bx-controls-direction {
 			a {
-				width: 20%;
+				margin-top: 0;
+				height: 92%;
+				top: 0;
+				width: 4em;
+				&:before {
+					padding-left: 0;
+					padding-right: 0;
+					position: relative;
+					top: 30%;
+				}
+			}
+			.bx-prev {
+				left: 0;
+				padding-left: 1em;
+			}
+			.bx-next {
+				right: 0;
+				padding-right: 1em;
 			}
 		}
 	}

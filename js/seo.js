@@ -72,9 +72,18 @@
 
 		equalizeHeights('.testimonials .testimonial-content');
 
-
-		$('.bxslider').bxSlider({
-			pager: false
+		$('.testimonials').bxSlider({
+			auto: true,
+			pause: 5000
+		})
+		$('.homepage-slider').bxSlider({
+			pager: false,
+			auto: true,
+			pause: 6000
+		});
+		$('.speaker-wrap').bxSlider({
+			auto: true,
+			pause: 4000
 		});
 		$('.partners-slider').bxSlider({
 			minSlides: 3,

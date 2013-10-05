@@ -23,7 +23,7 @@ get_header(); ?>
 					$slideshow = new WP_Query($slideArg);
 					?>
 
-					<div class="homepage-slider bxslider">
+					<div class="homepage-slider">
 
 					<?php
 						while($slideshow->have_posts()) :
@@ -132,7 +132,7 @@ get_header(); ?>
 				$testimonials = new WP_Query($testArg);
 				if ($testimonials->have_posts()):
 				?>
-				<div class="bxslider testimonials">
+				<div class="testimonials">
 				<?php
 				while ($testimonials->have_posts()): $testimonials->the_post();
 					get_template_part('templates/testimonial');

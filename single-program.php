@@ -39,27 +39,43 @@ get_header(); ?>
 				<div class="secondary-wrapper">
 
 				<?php // Speakers ?>
-				<?php if ( get_field( 'speakers' ) ): ?>
+				<?php
+					$speaker_args = array(
+						'post_type'			=> 'people',
+						'posts_per_page'	=> -1,
+						'tax_query'			=> array(
+							array(
+								'taxonomy'	=> 'organization',
+								'field'		=> 'slug',
+								'terms'		=> $post->post_name
+							)
+						),
+						'orderby'			=> 'menu_order',
+						'order'				=> 'ASC'
+					);
+					$speakers = new WP_Query( $speaker_args );
+					if ( $speakers->have_posts() ) : ?>
 					<div class="speakers">
 						<h2 class="page-title"><i class="icon-microphone"></i>Speakers</h2>
-						<div class="speaker-wrap bxslider">
-							<?php while ( has_sub_field( 'speakers' )): ?>
+						<div class="speaker-wrap">
+							<?php while ( $speakers->have_posts() ): $speakers->the_post(); ?>
 							<div class="speaker">
-								<?php $speaker = get_sub_field('people');?>
-								<h4 class="speaker-name title"><?php echo $speaker->post_title; ?></h4>
-								<p><?php the_field( 'credits', $speaker->ID ); ?></p>
+								<h4 class="speaker-name title"><?php the_title(); ?></h4>
+								<p><?php the_field( 'credits' ); ?></p>
 							</div><!-- .speaker -->
 							<?php endwhile; // while speakers ?>
 						</div><!-- .speaker-wrap -->
 					</div><!-- .speakers -->
-				<?php endif; // if speakers ?>
+				<?php endif; // if speakers
+				wp_reset_postdata();
+				?>
 
 				<?php // Testimonials ?>
 				<?php
-				$args = array(
-					'post_type'	=> 'testimonial',
+				$test_args = array(
+					'post_type'			=> 'testimonial',
 					'posts_per_page'	=> -1,
-					'tax_query' => array(
+					'tax_query' 		=> array(
 						array(
 							'taxonomy'	=> 'testi_category',
 							'field'		=> 'slug',
@@ -67,18 +83,20 @@ get_header(); ?>
 						)
 					)
 				);
-				$testimonials = new WP_Query( $args );
+				$testimonials = new WP_Query( $test_args );
 				if ( $testimonials->have_posts() ) : ?>
-				<div class="testimonials">
+				<div class="testimonials-wrapper">
 					<h2 class="page-title"><i class="icon-comments-alt"></i>Testimonials</h2>
-					<div class="bxslider">
+					<div class="testimonials">
 				<?php
 					while ( $testimonials->have_posts() ): $testimonials->the_post();
 						get_template_part( 'templates/testimonial' );
 					endwhile;?>
-					</div><!-- .bxslider -->
-				</div><!-- .testimonials -->
-				<?php endif; ?>
+					</div><!-- .testimonials -->
+				</div><!-- .testimonials-wrapper -->
+				<?php endif;
+				wp_reset_postdata();
+				?>
 
 				</div><!-- .secondary-wrapper -->
 			<?php endwhile; // end of the loop. ?>

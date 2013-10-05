@@ -161,22 +161,12 @@
 			right: auto;
 			left: auto;
 			width: 10%;
-			&:before {
-				margin-top: 1em;
-
-			}
 		}
 		.bx-prev {
 			float: left;
-			&:before {
-				padding-left: 0.5em;
-			}
 		}
 		.bx-next {
 			float: right;
-			&:before {
-				padding-right: 0.5em;
-			}
 		}
 	}
 }

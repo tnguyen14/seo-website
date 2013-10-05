@@ -1,7 +1,10 @@
 // Programs
-.programs-wrapper a {
-	color: $carbon;
-	text-decoration: none;
+.programs-wrapper {
+	margin-top: 1em;
+	a {
+		color: $carbon;
+		text-decoration: none;
+	}
 }
 .program-preview {
 	@extend %box;
@@ -10,6 +13,12 @@
 	margin-bottom: 1.5em;
 	&:hover {
 		background-color: #fcfcfc;
+	}
+	@media (min-width: 55em) {
+		float: left;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		width: 45%;
 	}
 }
 

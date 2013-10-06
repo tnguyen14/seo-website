@@ -40,7 +40,9 @@
 	}
 }
 .social-media {
-	float: right;
+	@media (min-width: 30em) {
+		float: right;
+	}
 	h3 {
 		font-size: 1.3em;
 		margin-bottom: 1em;

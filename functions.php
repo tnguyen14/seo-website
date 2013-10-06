@@ -66,6 +66,7 @@ function seo_vietnam_setup() {
 	add_image_size( 'people-thumb', 170, 170, false );
 	add_image_size( 'logo-slide', 125, 113, false );
 	add_image_size( 'testimonial', 80, 80, false );
+	add_image_size( 'program-feature', 670, 250, false);
 }
 endif; // seo_vietnam_setup
 add_action( 'after_setup_theme', 'seo_vietnam_setup' );
@@ -117,6 +118,8 @@ function seo_cpt() {
 		'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
 	));
 	$slideshow->set_icon( 'sort' );
+	$slide_loc = new Super_Custom_Taxonomy( 'slide_loc', 'Location', 'Locations', 'category');
+	$slide_loc->connect_post_types( 'slideshow' );
 
 	// # Taxonomy test, should be like tags
 	// $tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
@@ -130,8 +133,8 @@ function seo_cpt() {
 	$testimonial = new Super_Custom_Post_Type( 'testimonial' );
 	$testimonial->set_icon( 'thumbs-up' );
 
-	$testi_cat = new Super_Custom_Taxonomy( 'testi_category', 'Category', 'Categories', 'category' );
-	$testi_cat->connect_post_types( 'testimonial' );
+	$testi_tax = new Super_Custom_Taxonomy( 'testi_category', 'Category', 'Categories', 'category' );
+	$testi_tax->connect_post_types( 'testimonial' );
 
 	$people = new Super_Custom_Post_Type('people', 'Person', 'People', array(
 		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),

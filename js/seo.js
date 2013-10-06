@@ -81,7 +81,11 @@
 			auto: true,
 			pause: 6000
 		});
-		$('.speaker-wrap').bxSlider({
+		// Program slides
+		$('.slides').bxSlider({
+			pager: false
+		});
+		$('.speakers').bxSlider({
 			auto: true,
 			pause: 4000
 		});

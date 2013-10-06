@@ -33,6 +33,36 @@ get_header(); ?>
 							</div><!-- .stat -->
 						<?php endforeach; ?>
 					</div><!-- .stats -->
+					<?php // Slides
+					$slides_args = array(
+						'post_type'			=> 'slideshow',
+						'posts_per_page'	=> -1,
+						'tax_query'			=> array(
+							array(
+								'taxonomy'	=> 'slide_loc',
+								'field'		=> 'slug',
+								'terms'		=> $post->post_name
+							)
+						),
+						'orderby'			=> 'menu_order',
+						'order'				=> 'ASC'
+					);
+					$slides = new WP_Query( $slides_args );
+					if ( $slides->have_posts() ): ?>
+						<div class="slides-wrapper">
+							<div class="slides">
+							<?php while ( $slides->have_posts() ): $slides->the_post(); ?>
+								<div class="slide">
+									<div class="slide-text"><?php the_content(); ?></div>
+									<?php the_post_thumbnail( 'program-feature' ); ?>
+								</div><!-- .slide -->
+							<?php endwhile; // while slides ?>
+							</div><!-- .slides -->
+						</div><!-- .slides-wrapper -->
+
+					<?php endif; // if slides
+					wp_reset_postdata();
+					?>
 					<?php the_content(); ?>
 				</div><!-- .content-wrap -->
 
@@ -55,9 +85,9 @@ get_header(); ?>
 					);
 					$speakers = new WP_Query( $speaker_args );
 					if ( $speakers->have_posts() ) : ?>
-					<div class="speakers">
+					<div class="speakers-wrapper">
 						<h2 class="page-title"><i class="icon-microphone"></i>Speakers</h2>
-						<div class="speaker-wrap">
+						<div class="speakers">
 							<?php while ( $speakers->have_posts() ): $speakers->the_post(); ?>
 							<div class="speaker">
 								<h4 class="speaker-name title"><?php the_title(); ?></h4>

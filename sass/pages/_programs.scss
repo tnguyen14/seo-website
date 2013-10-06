@@ -37,7 +37,58 @@
 		font-size: 1.5em;
 		margin-bottom: 0.5em;
 	}
-	.speakers {
+	.stats {
+		@extend %section;
+		background-color: $light-gray;
+		padding: 1em;
+		@media (min-width: 56.25em) {
+			float: right;
+			margin-left: 2em;
+			max-width: 40%;
+		}
+		.label {
+			color: $blue;
+		}
+	}
+	.slides-wrapper {
+		@extend %bx-arrow;
+		margin-bottom: 2em;
+		@media (min-width: 56.25em) {
+			max-width: 55%;
+		}
+		.bx-controls-direction {
+			a {
+				color: darken(#fff, 20%);
+				margin-top: 0;
+				padding-top: 4em;
+				top: 0;
+				width: 3em;
+				&:hover {
+					background: none;
+					color: #fff;
+				}
+			}
+			.bx-prev {
+				left: 0;
+				padding-left: 0.5em;
+			}
+			.bx-next {
+				right: 0;
+				padding-right: 0.5em;
+			}
+		}
+	}
+	.slides {
+		@extend %clearfix;
+	}
+	.slide {
+		.slide-text {
+			padding: 0.5em;
+			right: 1em;
+			bottom: 1em;
+		}
+	}
+	.speakers-wrapper {
 		@extend %bx-controls;
 		@media (min-width: 62.5em) {
 			float: left;
@@ -59,10 +110,9 @@
 			}
 		}
 	}
-	.speaker-wrap {
+	.speakers {
 		@extend %clearfix;
 		@extend %box;
-
 	}
 	.speaker {
 		@extend %section;
@@ -101,17 +151,6 @@
 				right: 0;
 				padding-right: 1em;
 			}
-		}
-	}
-	.stats {
-		@extend %section;
-		background-color: $light-gray;
-		float: right;
-		margin-left: 2em;
-		padding: 1em;
-		max-width: 40%;
-		.label {
-			color: $blue;
 		}
 	}
 }

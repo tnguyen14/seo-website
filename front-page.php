@@ -14,13 +14,21 @@ get_header(); ?>
 				<div class="homepage-slider-wrapper">
 					<?php
 					// Outputting the slideshow
-					$slideArg = array(
+					$slide_args = array(
 						'post_type' => 'slideshow',
+						'posts_per_page' => -1,
 						'orderby'	=> 'menu_order',
-						'order'		=> 'ASC'
+						'order'		=> 'ASC',
+						'tax_query'	=> array(
+							array(
+								'taxonomy'	=> 'slide_loc',
+								'field'		=> 'slug',
+								'terms'		=> 'home'
+							)
+						)
 					);
 
-					$slideshow = new WP_Query($slideArg);
+					$slideshow = new WP_Query($slide_args);
 					?>
 
 					<div class="homepage-slider">
@@ -33,7 +41,7 @@ get_header(); ?>
 								<?php if ( get_field( 'link' ) ):?>
 									<a href="<?php the_field( 'link' ); ?>">
 								<?php endif; ?>
-									<h2 class="slide-text"><?php echo get_the_content();?></h2>
+									<h2 class="slide-text"><?php the_content();?></h2>
 									<?php if ( get_field( 'link' ) ):?>
 									</a>
 								<?php endif; ?>

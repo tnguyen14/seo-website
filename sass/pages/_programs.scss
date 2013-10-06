@@ -43,8 +43,11 @@
 		padding: 1em;
 		@media (min-width: 56.25em) {
 			float: right;
-			margin-left: 2em;
-			max-width: 40%;
+			margin-left: 2%;
+			width: 33%;
+		}
+		@media (min-width: 62.5em) {
+			width: 38%;
 		}
 		.label {
 			color: $blue;
@@ -54,7 +57,10 @@
 		@extend %bx-arrow;
 		margin-bottom: 2em;
 		@media (min-width: 56.25em) {
-			max-width: 55%;
+			max-width: 65%;
+		}
+		@media (min-width: 62.5em) {
+			max-width: 60%;
 		}
 		.bx-controls-direction {
 			a {
@@ -124,7 +130,7 @@
 	.testimonials-wrapper {
 		@extend %bx-arrow;
 		@media (min-width: 62.5em) {
-			float: right;
+			float: left;
 			width: 50%;
 		}
 		.page-title {
@@ -141,6 +147,9 @@
 					padding-right: 0;
 					position: relative;
 					top: 30%;
+				}
+				&:hover {
+					background: none;
 				}
 			}
 			.bx-prev {

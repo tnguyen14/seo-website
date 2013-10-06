@@ -66,11 +66,14 @@
 
 		equalizeRowHeights([
 			'.partner-single',
-			'.media-single-wrapper',
-			'.people .person'
+			'.media-single-wrapper'
 		]);
 
 		equalizeHeights('.testimonials .testimonial-content');
+
+		if (window.matchMedia("(min-width: 46.75em)").matches) {
+			equalizeRowHeights(['.people .person']);
+		}
 
 		$('.testimonials').bxSlider({
 			auto: true,

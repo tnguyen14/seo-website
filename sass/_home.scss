@@ -52,9 +52,16 @@
 		height: auto;
 	}
 	.slide-text {
-		padding: 1em;
-		right: 2em;
-		bottom: 3em;
+		font-size: 0.7em;
+		padding: 0.5em;
+		right: 0;
+		bottom: 0;
+		@media (min-width: 25em) {
+			font-size: 1em;
+			padding: 1em;
+			right: 2em;
+			bottom: 3em;
+		}
 		@media (min-width: 48.75em) {
 			font-size: 1.5em;
 		}

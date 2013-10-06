@@ -75,7 +75,7 @@
 		$('.testimonials').bxSlider({
 			auto: true,
 			pause: 5000
-		})
+		});
 		$('.homepage-slider').bxSlider({
 			pager: false,
 			auto: true,

@@ -3,7 +3,8 @@
 .media-wrapper,
 .programs-wrapper,
 .content-wrapper,
-.secondary-wrapper {
+.secondary-wrapper,
+.entry-content {
 	@extend %clearfix;
 	@extend %wrapper;
 

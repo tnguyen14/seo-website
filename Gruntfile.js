@@ -127,17 +127,31 @@ module.exports = function(grunt) {
 					dest: "/home/tringuyen/webapps/inspiredev/seo-wp/wp-content/themes/seo-vietnam",
 					host: "deploy@web319.webfaction.com"
 				}
+			},
+			prod: {
+				options: {
+					dest: "/home6/seovietn/public_html/wp-content/themes/seo-vietnam",
+					host: "seovietn@seo-vietnam.org"
+				}
 			}
 		}
 
 	});
 
-	grunt.registerTask('deploy', [
+	grunt.registerTask('build', [
 		'sass',
 		'autoprefixer',
 		'csso',
-		'jshint',
-		'rsync'
+		'jshint'
+	]);
+	grunt.registerTask('deploy:staging', [
+		'build',
+		'rsync:staging'
+	]);
+
+	grunt.registerTask('deploy:prod', 'Deploy to Production', [
+		'build',
+		'rsync:prod'
 	]);
 
 	// register task

@@ -72,7 +72,7 @@
 		equalizeHeights('.testimonials .testimonial-content');
 
 		if (window.matchMedia("(min-width: 46.75em)").matches) {
-			equalizeRowHeights(['.people .person']);
+			// equalizeRowHeights(['.people .person']);
 		}
 
 		$('.testimonials').bxSlider({
@@ -120,7 +120,7 @@
 		$('.expandible').click(function () {
 			$(this).toggleClass('collapsed');
 			$(this).siblings('.description').toggle();
-			equalizeRowHeights(['.people .person']);
+			// equalizeRowHeights(['.people .person']);
 		});
 	});
 })( jQuery, _ );

@@ -14,7 +14,7 @@ get_header(); ?>
 			<div class="media-wrapper">
 			<?php /* Start the Loop */ ?>
 			<?php $args = array(
-				"category"	=> 4,
+				"category"	=> get_cat_ID("Media Coverage"),
 				"posts_per_page"	=> -1
 			);
 

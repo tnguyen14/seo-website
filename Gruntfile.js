@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 			},
 			prod: {
 				options: {
-					dest: "/home6/seovietn/public_html/wp-content/themes/seo-vietnam",
+					dest: "/home6/seovietn/public_html/main/wp-content/themes/seo-vietnam",
 					host: "seovietn@seo-vietnam.org"
 				}
 			}

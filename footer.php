@@ -16,7 +16,7 @@
 				<div class="contact-info">
 					<h3>SEO Viet Nam</h3>
 					<p><i class="icon-map-marker"></i> Ho Chi Minh City, Vietnam</p>
-					<p><i class="icon-envelope"></i> <a href="mailto:info@seo-vietnam.org">info@seo-vietnam.org</a></p>
+					<p><i class="icon-envelope"></i> <a href="mailto:recruitment@seo-vietnam.org">recruitment@seo-vietnam.org</a></p>
 				</div><!-- .contact-info -->
 				<div class="social-media">
 					<h3>Follow Us</h3>

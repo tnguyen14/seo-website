@@ -66,7 +66,7 @@ get_header(); ?>
 				?>
 				</div>
 				<div class="info container">
-					Please consult a list of <a href="#">Frequently Asked Questions</a> to find out more about our program. For question or inquiry, please contact <a href="mailto:recruitment@seo-vietnam.org">recruitment@seo-vietnam.org</a>
+					Please consult a list of <a href="/faqs">Frequently Asked Questions</a> to find out more about our program. For question or inquiry, please contact <a href="mailto:recruitment@seo-vietnam.org">recruitment@seo-vietnam.org</a>
 				</div>
 
 				<div class="container">

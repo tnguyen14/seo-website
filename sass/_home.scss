@@ -82,6 +82,7 @@
 	margin-bottom: 2em;
 	padding: 1.5em 2em;
 	position: relative;
+	overflow: hidden;
 	&:after {
 		border-top: 1px solid #e0dfdf;
 		border-bottom: 1px solid #fcfcfc;
